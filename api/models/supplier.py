@@ -8,6 +8,14 @@ class Suppliers(db.Model):
     product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))
     store_id = db.Column(db.Integer(), db.ForeignKey('store.store_id'))
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 
 Suppliers.products = db.relationship('Products', backref='supplier', lazy=True)
 Suppliers.stores = db.relationship('Store', backref='supplier', lazy=True)

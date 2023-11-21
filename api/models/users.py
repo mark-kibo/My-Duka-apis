@@ -8,7 +8,13 @@ class Users(db.Model):
     role = db.Column(db.String(20), nullable=False)
     store_id = db.Column(db.Integer(), db.ForeignKey('store.store_id'))
 
-
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
 
 # Relationships
 Users.products = db.relationship('Products', backref='user', lazy=True)

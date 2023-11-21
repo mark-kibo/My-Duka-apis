@@ -13,6 +13,14 @@ class Products(db.Model):
     store_id = db.Column(db.Integer(), db.ForeignKey('store.store_id'))
     supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 
 Products.receipts = db.relationship('Receipts', backref='product', lazy=True)
 Products.supply_requests = db.relationship('SupplyRequests', backref='product', lazy=True)

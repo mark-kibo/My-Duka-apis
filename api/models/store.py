@@ -6,6 +6,15 @@ class Store(db.Model):
     product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))
     supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))
 
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+    
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
+
 Store.receipts = db.relationship('Receipts', backref='store', lazy=True)
 Store.suppliers = db.relationship('Suppliers', backref='store', lazy=True)
 Store.sales = db.relationship('Sales', backref='store', lazy=True)
