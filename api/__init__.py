@@ -5,33 +5,35 @@ from .config.config import config_dict
 from .utils import db
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
+from .login.loginapi import login_namespace
+
 
 def create_app():
-    app=Flask(__name__)
+    app = Flask(__name__)
     app.config.from_object(config_dict['dev'])
     CORS(app)
 
-    
-    
+
     # initialize database
     db.init_app(app)
-    jwt=JWTManager(app)
+    jwt = JWTManager(app)
 
-    migrate=Migrate(app, db)
-    
-    api=Api(app)
-    
+    migrate = Migrate(app, db)
 
+    api = Api(app)
 
-
+    api.add_namespace(login_namespace)
 
     # @app.shell_context_processor
     # def make_shell_context():
     #     return {
-    #         'db':db,
-    #         'User':User,
-    #         'Messages':Messages,
-    #         'ChatRoom':ChatRoom,
-    #         'hub':Hub
+    #         'db': db,
+    #         'User': User,
+    #         'Messages': Messages,
+    #         'ChatRoom': ChatRoom,
+    #         'hub': Hub
     #     }
     return app
+
+
+
