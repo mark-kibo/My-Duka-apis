@@ -47,16 +47,18 @@ signup_parser.add_argument('store_id', type=int, required=True, help='Store ID i
 # Define a resource for the signup endpoint using Flask-RESTx
 @api.route('/signup')
 class SignupResource(Resource):
-    # Define a POST method for the signup endpoint
     @api.expect(signup_parser)
     def post(self):
-        # Parse the request arguments
         args = signup_parser.parse_args()
-        # Create a new Users instance with the parsed arguments
-        new_user = Users(**args)
-        # Save the new user to the database
+        new_user = Users(
+            username=args['username'],
+            password=args['password'],
+            email=args['email'],
+            full_name=args['full_name'],
+            role=args['role'],
+            store_id=args['store_id']
+        )
         new_user.save()
-        # Return a response indicating successful user creation
         return {'message': 'User created successfully'}, 201
 
 # Run the Flask application if executed as the main script
