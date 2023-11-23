@@ -1,3 +1,4 @@
+# users.py
 from ..utils import db
 from flask_bcrypt import Bcrypt
 from flask_login import UserMixin
@@ -13,13 +14,8 @@ class Users(db.Model, UserMixin):
     role = db.Column(db.String(20), nullable=False)
     store_id = db.Column(db.Integer(), db.ForeignKey('store.store_id'))
 
-    def __init__(self, username, email, full_name, password, role, store_id=None):
-        self.username = username
-        self.email = email
-        self.full_name = full_name
+    def set_password(self, password):
         self.password = bcrypt.generate_password_hash(password).decode('utf-8')
-        self.role = role
-        self.store_id = store_id
 
     def check_password(self, password):
         return bcrypt.check_password_hash(self.password, password)
