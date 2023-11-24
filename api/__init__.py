@@ -1,26 +1,47 @@
+
 from flask import Flask
 from flask_cors import CORS
 from flask_restx import Api
+
+
 from .config.config import config_dict
 from .utils import db
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
+from .models.association import store_product_association
+from .models.users import Users
+from .models.stores import Store
+from .models.products import Products
+from .models.supplyrequests import SupplyRequests
+from .models.suppliers import Suppliers
+from .models.sales import Sales
+from .models.receipts import Receipts
+
+# from .models.stores import Store
 
 def create_app():
     app=Flask(__name__)
     app.config.from_object(config_dict['dev'])
+    # initialize database
+    db.init_app(app)
     CORS(app)
 
     
     
-    # initialize database
-    db.init_app(app)
+    
     jwt=JWTManager(app)
 
     migrate=Migrate(app, db)
     
     api=Api(app)
     
+   
+    
+    with app.app_context():
+        db.create_all()
+        
+        
+        
 
 
 

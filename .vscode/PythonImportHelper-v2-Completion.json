@@ -1,0 +1,331 @@
+[
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "importPath": "decouple",
+        "description": "decouple",
+        "isExtraImport": true,
+        "detail": "decouple",
+        "documentation": {}
+    },
+    {
+        "label": "Products",
+        "importPath": "api.models.product",
+        "description": "api.models.product",
+        "isExtraImport": true,
+        "detail": "api.models.product",
+        "documentation": {}
+    },
+    {
+        "label": "Receipts",
+        "importPath": "api.models.receipts",
+        "description": "api.models.receipts",
+        "isExtraImport": true,
+        "detail": "api.models.receipts",
+        "documentation": {}
+    },
+    {
+        "label": "Sales",
+        "importPath": "api.models.sales",
+        "description": "api.models.sales",
+        "isExtraImport": true,
+        "detail": "api.models.sales",
+        "documentation": {}
+    },
+    {
+        "label": "Store",
+        "importPath": "api.models.store",
+        "description": "api.models.store",
+        "isExtraImport": true,
+        "detail": "api.models.store",
+        "documentation": {}
+    },
+    {
+        "label": "Suppliers",
+        "importPath": "api.models.supplier",
+        "description": "api.models.supplier",
+        "isExtraImport": true,
+        "detail": "api.models.supplier",
+        "documentation": {}
+    },
+    {
+        "label": "SupplyRequests",
+        "importPath": "api.models.supplyRequest",
+        "description": "api.models.supplyRequest",
+        "isExtraImport": true,
+        "detail": "api.models.supplyRequest",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "importPath": "api.models.users",
+        "description": "api.models.users",
+        "isExtraImport": true,
+        "detail": "api.models.users",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "importPath": "api",
+        "description": "api",
+        "isExtraImport": true,
+        "detail": "api",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "api.config.config",
+        "description": "api.config.config",
+        "peekOfCode": "class Config:\n    SECRET_KEY=config(\"SECRET_KEY\", 'secret')\n    SQLALCHEMY_TRACK_MODIFICATIONS=False\n    JWT_ACCESS_TOKEN_EXPIRES=timedelta(minutes=30)\n    JWT_REFRESH_TOKEN_EXPIRES=timedelta(minutes=30)\n    JWT_SECRET_KEY=config(\"JWT_SECRET_KEY\")\nclass DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI=\"postgresql://postgres:kibo@localhost/mydukka\"",
+        "detail": "api.config.config",
+        "documentation": {}
+    },
+    {
+        "label": "DevConfig",
+        "kind": 6,
+        "importPath": "api.config.config",
+        "description": "api.config.config",
+        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI=\"postgresql://postgres:kibo@localhost/mydukka\"\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig\n}",
+        "detail": "api.config.config",
+        "documentation": {}
+    },
+    {
+        "label": "ProductionConfig",
+        "kind": 6,
+        "importPath": "api.config.config",
+        "description": "api.config.config",
+        "peekOfCode": "class ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig\n}",
+        "detail": "api.config.config",
+        "documentation": {}
+    },
+    {
+        "label": "store_product_association",
+        "kind": 5,
+        "importPath": "api.models.association",
+        "description": "api.models.association",
+        "peekOfCode": "store_product_association = db.Table(\n    'store_product_association',\n    db.Column('store_id', db.Integer(), db.ForeignKey('stores.store_id')),\n    db.Column('product_id', db.Integer(), db.ForeignKey('products.product_id'))\n)",
+        "detail": "api.models.association",
+        "documentation": {}
+    },
+    {
+        "label": "Products",
+        "kind": 6,
+        "importPath": "api.models.products",
+        "description": "api.models.products",
+        "peekOfCode": "class Products(db.Model):\n    __tablename__ = 'products'\n    product_id = db.Column(db.Integer(), primary_key=True)\n    product_name = db.Column(db.String(255), nullable=False)\n    description = db.Column(db.String(255))\n    category = db.Column(db.String(50))\n    brand = db.Column(db.String(50))\n    quantity = db.Column(db.Integer())\n    buying_price = db.Column(db.Integer())\n    selling_price = db.Column(db.Integer())",
+        "detail": "api.models.products",
+        "documentation": {}
+    },
+    {
+        "label": "Receipts",
+        "kind": 6,
+        "importPath": "api.models.receipts",
+        "description": "api.models.receipts",
+        "peekOfCode": "class Receipts(db.Model):\n    __tablename__ = 'receipts'\n    receipt_id = db.Column(db.Integer(), primary_key=True)\n    date_time = db.Column(db.DateTime())\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    quantity_received = db.Column(db.Integer())\n    payment_status = db.Column(db.String(50))",
+        "detail": "api.models.receipts",
+        "documentation": {}
+    },
+    {
+        "label": "Sales",
+        "kind": 6,
+        "importPath": "api.models.sales",
+        "description": "api.models.sales",
+        "peekOfCode": "class Sales(db.Model):\n    __tablename__ = 'sales'\n    sale_id = db.Column(db.Integer(), primary_key=True)\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    product_quantity = db.Column(db.Integer())\n    store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))\n    amount = db.Column(db.Integer())",
+        "detail": "api.models.sales",
+        "documentation": {}
+    },
+    {
+        "label": "Store",
+        "kind": 6,
+        "importPath": "api.models.stores",
+        "description": "api.models.stores",
+        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    location = db.Column(db.String(255))\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))",
+        "detail": "api.models.stores",
+        "documentation": {}
+    },
+    {
+        "label": "Suppliers",
+        "kind": 6,
+        "importPath": "api.models.suppliers",
+        "description": "api.models.suppliers",
+        "peekOfCode": "class Suppliers(db.Model):\n    __tablename__ = 'suppliers'\n    supplier_id = db.Column(db.Integer(), primary_key=True)\n    supply_name = db.Column(db.String(255))\n    supplier_contact = db.Column(db.String(50))\n    supplier_email = db.Column(db.String(255))\n    supplier_address = db.Column(db.String(255))\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))",
+        "detail": "api.models.suppliers",
+        "documentation": {}
+    },
+    {
+        "label": "SupplyRequests",
+        "kind": 6,
+        "importPath": "api.models.supplyrequests",
+        "description": "api.models.supplyrequests",
+        "peekOfCode": "class SupplyRequests(db.Model):\n    __tablename__ = 'supply_requests'\n    request_id = db.Column(db.Integer(), primary_key=True)\n    clerk_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    quantity_requested = db.Column(db.Integer())\n    reason_for_request = db.Column(db.String(255))\n    received_items = db.Column(db.Integer())\n    received = db.Column(db.Boolean())\n    approved = db.Column(db.Boolean())",
+        "detail": "api.models.supplyrequests",
+        "documentation": {}
+    },
+    {
+        "label": "Users",
+        "kind": 6,
+        "importPath": "api.models.users",
+        "description": "api.models.users",
+        "peekOfCode": "class Users(db.Model):\n    __tablename__= \"users\"\n    user_id = db.Column(db.Integer(), primary_key=True)\n    username = db.Column(db.String(50), unique=True, nullable=False)\n    password = db.Column(db.String(255), nullable=False)\n    email = db.Column(db.String(100), unique=True, nullable=False)\n    full_name = db.Column(db.String(100), nullable=False)\n    role = db.Column(db.String(20), nullable=False)\n    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'))\n    # Define the foreign key relationship for the stores",
+        "detail": "api.models.users",
+        "documentation": {}
+    },
+    {
+        "label": "create_dummy_data",
+        "kind": 2,
+        "importPath": "api.create_data",
+        "description": "api.create_data",
+        "peekOfCode": "def create_dummy_data():\n    # Users\n    user1 = Users(username=\"john_doe\", password=\"password1\", email=\"john@example.com\", full_name=\"John Doe\", role=\"superuser\")\n    user2 = Users(username=\"jane_doe\", password=\"password2\", email=\"jane@example.com\", full_name=\"Jane Doe\", role=\"admin\")\n    user3 = Users(username=\"bob_smith\", password=\"password3\", email=\"bob@example.com\", full_name=\"Bob Smith\", role=\"data entry clerk\")\n    db.session.add_all([user1, user2, user3])\n    db.session.commit()\n    # Products\n    product1 = Products(product_name=\"Laptop\", description=\"High-performance laptop\", category=\"Electronics\", brand=\"ABC\", quantity=50, buying_price=800.0, selling_price=1200.0, payment_status=\"unpaid\", image_url=\"laptop_image.jpg\")\n    product2 = Products(product_name=\"Smartphone\", description=\"Latest smartphone model\", category=\"Electronics\", brand=\"XYZ\", quantity=100, buying_price=500.0, selling_price=800.0, payment_status=\"paid\", image_url=\"smartphone_image.jpg\")",
+        "detail": "api.create_data",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "venv.Scripts.activate_this",
+        "description": "venv.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "venv.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "runserver",
+        "description": "runserver",
+        "peekOfCode": "app = create_app()\nCORS(app, resources={r\"/api/*\": {\"origins\": \"http://127.0.0.1:5000\"}})\napp.run()",
+        "detail": "runserver",
+        "documentation": {}
+    }
+]
