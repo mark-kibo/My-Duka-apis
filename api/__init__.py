@@ -18,10 +18,12 @@ from .models.sales import Sales
 from .models.receipts import Receipts
 from flask_mail import Mail, Message
 from .email.views import email_namespace
+from api.models.signup import signup_ns
 # from .models.stores import Store
 
+
 def create_app():
-    app=Flask(__name__)
+    app = Flask(__name__)
     app.config.from_object(config_dict['dev'])
     mail=Mail(app)
     # initialize database
@@ -39,6 +41,7 @@ def create_app():
     api=Api(app)
     
     api.add_namespace(email_namespace)
+    api.add_namespace(signup_ns)
     
    
     
