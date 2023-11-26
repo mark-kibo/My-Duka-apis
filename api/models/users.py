@@ -1,19 +1,23 @@
 from ..utils import db
+from flask_bcrypt import Bcrypt
+from flask_login import UserMixin
 
-class Users(db.Model):
-    __tablename__= "users"
+bcrypt = Bcrypt()
 
+class Users(db.Model, UserMixin):
     user_id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(50), unique=True, nullable=False)
     password = db.Column(db.String(255), nullable=False)
     email = db.Column(db.String(100), unique=True, nullable=False)
     full_name = db.Column(db.String(100), nullable=False)
     role = db.Column(db.String(20), nullable=False)
-    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'))
+    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id', ondelete='CASCADE'))
 
-  
-    # Define the foreign key relationship for the stores
-    stores = db.relationship('Store', backref='user', lazy=True, foreign_keys='Store.user_id')
+    def set_password(self, password):
+        self.password = bcrypt.generate_password_hash(password).decode('utf-8')
+
+    def check_password(self, password):
+        return bcrypt.check_password_hash(self.password, password)
 
     def save(self):
         db.session.add(self)
@@ -22,4 +26,6 @@ class Users(db.Model):
     def delete(self):
         db.session.delete(self)
         db.session.commit()
-    
+
+# Relationships
+Users.products = db.relationship('Products', backref='user', lazy=True, foreign_keys='Products.user_id')
