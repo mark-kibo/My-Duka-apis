@@ -16,29 +16,34 @@ from .models.supplyrequests import SupplyRequests
 from .models.suppliers import Suppliers
 from .models.sales import Sales
 from .models.receipts import Receipts
-
+from flask_mail import Mail, Message
+from .email.views import email_namespace
 # from .models.stores import Store
 
 def create_app():
     app=Flask(__name__)
     app.config.from_object(config_dict['dev'])
+    mail=Mail(app)
     # initialize database
     db.init_app(app)
     CORS(app)
+    
 
     
     
     
-    jwt=JWTManager(app)
+    jwt = JWTManager(app)
 
     migrate=Migrate(app, db)
     
     api=Api(app)
     
+    api.add_namespace(email_namespace)
+    
    
     
-    with app.app_context():
-        db.create_all()
+    # with app.app_context():
+    #     db.create_all()
         
         
         
