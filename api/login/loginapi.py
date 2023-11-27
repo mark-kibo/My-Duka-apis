@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from werkzeug.security import check_password_hash
 from flask import current_app
 
-from models.users import User
+from api.models.users import User
 
 login_namespace = Namespace('login', description='Login operations')
 
