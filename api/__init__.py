@@ -8,14 +8,17 @@ from .config.config import config_dict
 from .utils import db
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
-from login.loginapi import login_namespace
+from api.signup.signupapi import signup_namespace
+from api.login.loginapi import login_namespace
+
 
 def create_app():
     app = Flask(__name__)
 
     app.config.from_object(config_dict['dev'])
     # initialize database
-    db.init_app(app)
+    
+    # db.init_app(app)
     CORS(app)
 
     
@@ -28,7 +31,7 @@ def create_app():
     
     api=Api(app)
 
-
+    api.add_namespace(signup_namespace)
     api.add_namespace(login_namespace)
     
 
