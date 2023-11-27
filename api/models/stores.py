@@ -15,3 +15,17 @@ class Store(db.Model):
     supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)
 
 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        # Delete associated products
+        for product in self.products:
+            db.session.delete(product)
+
+        # Delete the store itself
+        db.session.delete(self)
+        db.session.commit()
+
+

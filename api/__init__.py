@@ -18,12 +18,12 @@ from .models.sales import Sales
 from .models.receipts import Receipts
 from flask_mail import Mail, Message
 from .email.views import email_namespace
+from .login.loginapi import login_namespace
+from .stores.views import store_namespace
 # from .models.stores import Store
-from login.loginapi import login_namespace
 
 def create_app():
-    app = Flask(__name__)
-
+    app=Flask(__name__)
     app.config.from_object(config_dict['dev'])
     mail=Mail(app)
     # initialize database
@@ -33,12 +33,18 @@ def create_app():
 
     
     
-    jwt=JWTManager(app)
+    
+    jwt = JWTManager(app)
 
     migrate=Migrate(app, db)
     
     api=Api(app)
     
+
+    # api blueprints - used for documentation
+    api.add_namespace(email_namespace)
+    api.add_namespace(login_namespace)
+    api.add_namespace(store_namespace)
    
     
     with app.app_context():
@@ -53,13 +59,10 @@ def create_app():
     # @app.shell_context_processor
     # def make_shell_context():
     #     return {
-    #         'db': db,
-    #         'User': User,
-    #         'Messages': Messages,
-    #         'ChatRoom': ChatRoom,
-    #         'hub': Hub
+    #         'db':db,
+    #         'User':User,
+    #         'Messages':Messages,
+    #         'ChatRoom':ChatRoom,
+    #         'hub':Hub
     #     }
     return app
-
-
-

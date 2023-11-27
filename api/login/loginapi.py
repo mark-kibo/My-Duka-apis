@@ -3,7 +3,7 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from werkzeug.security import check_password_hash
 from flask import current_app
 
-from models.users import User
+from ..models.users import Users
 
 login_namespace = Namespace('login', description='Login operations')
 
@@ -20,7 +20,7 @@ class LoginResource(Resource):
         username = data['username']
         password = data['password']
 
-        user = User.query.filter_by(username=username).first()
+        user = Users.query.filter_by(username=username).first()
         # user = User(username = "mercy", password="mercy#")
 
         if user and check_password_hash(user.password, password):
