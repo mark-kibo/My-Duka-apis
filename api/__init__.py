@@ -18,6 +18,7 @@ from .models.sales import Sales
 from .models.receipts import Receipts
 from flask_mail import Mail, Message
 from .email.views import email_namespace
+from .suppliers.app import suppliers_namespace
 # from .models.stores import Store
 
 def create_app():
@@ -39,6 +40,7 @@ def create_app():
     api=Api(app)
     
     api.add_namespace(email_namespace)
+    api.add_namespace(suppliers_namespace)
     
    
     
