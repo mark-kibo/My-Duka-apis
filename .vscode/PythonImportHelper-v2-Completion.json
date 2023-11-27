@@ -25,6 +25,94 @@
         "documentation": {}
     },
     {
+        "label": "URLSafeTimedSerializer",
+        "importPath": "itsdangerous",
+        "description": "itsdangerous",
+        "isExtraImport": true,
+        "detail": "itsdangerous",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal_with",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
+        "documentation": {}
+    },
+    {
+        "label": "Message",
+        "importPath": "flask_mail",
+        "description": "flask_mail",
+        "isExtraImport": true,
+        "detail": "flask_mail",
+        "documentation": {}
+    },
+    {
         "label": "Products",
         "importPath": "api.models.product",
         "description": "api.models.product",
@@ -107,14 +195,6 @@
         "documentation": {}
     },
     {
-        "label": "Flask",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "CORS",
         "importPath": "flask_cors",
         "description": "flask_cors",
@@ -135,7 +215,7 @@
         "kind": 6,
         "importPath": "api.config.config",
         "description": "api.config.config",
-        "peekOfCode": "class Config:\n    SECRET_KEY=config(\"SECRET_KEY\", 'secret')\n    SQLALCHEMY_TRACK_MODIFICATIONS=False\n    JWT_ACCESS_TOKEN_EXPIRES=timedelta(minutes=30)\n    JWT_REFRESH_TOKEN_EXPIRES=timedelta(minutes=30)\n    JWT_SECRET_KEY=config(\"JWT_SECRET_KEY\")\nclass DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI=\"postgresql://postgres:kibo@localhost/mydukka\"",
+        "peekOfCode": "class Config:\n    SECRET_KEY=config(\"SECRET_KEY\", 'secret')\n    SQLALCHEMY_TRACK_MODIFICATIONS=False\n    JWT_ACCESS_TOKEN_EXPIRES=timedelta(minutes=30)\n    JWT_REFRESH_TOKEN_EXPIRES=timedelta(minutes=30)\n    JWT_SECRET_KEY=config(\"JWT_SECRET_KEY\")\n    MAIL_SERVER=\"smtp.gmail.com\"\n    MAIL_USERNAME=\"kibochamark@gmail.com\"\n    MAIL_PASSWORD=\"lmgrcdoixjdiplul\"\n    MAIL_PORT=587",
         "detail": "api.config.config",
         "documentation": {}
     },
@@ -155,6 +235,24 @@
         "description": "api.config.config",
         "peekOfCode": "class ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig\n}",
         "detail": "api.config.config",
+        "documentation": {}
+    },
+    {
+        "label": "TokenizeEmail",
+        "kind": 6,
+        "importPath": "api.email.views",
+        "description": "api.email.views",
+        "peekOfCode": "class TokenizeEmail(Resource):\n    @email_namespace.expect(getmail_model)\n    def post(self):\n        data = request.get_json()\n        print(data.get(\"email\"))\n        # create the token\n        token = s.dumps(data.get(\"email\"), salt=\"email-confirm\")\n        # create email message\n        msg=Message(\"email\", sender=\"kibochamark@gmail.com\" ,  recipients=[data.get(\"email\")])\n        print(msg)",
+        "detail": "api.email.views",
+        "documentation": {}
+    },
+    {
+        "label": "ConfirmTokenizeEmail",
+        "kind": 6,
+        "importPath": "api.email.views",
+        "description": "api.email.views",
+        "peekOfCode": "class ConfirmTokenizeEmail(Resource):\n    def get(self, token):\n        try:\n            # confirm the tokenized email\n            email = s.loads(token, salt=\"email-confirm\", max_age=60)\n            print(email)\n            if email:\n                return email,  HTTPStatus.OK\n            else:\n                return {",
+        "detail": "api.email.views",
         "documentation": {}
     },
     {
