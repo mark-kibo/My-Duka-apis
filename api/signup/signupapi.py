@@ -5,16 +5,12 @@ from flask_bcrypt import Bcrypt
 from werkzeug.exceptions import BadRequest
 from api.models.users import User 
 
-
 app = Flask(__name__)
-
-
 
 bcrypt = Bcrypt()
 api = Api(app, version='1.0', title='Your API', description='User Signup API')
 
-
-signup_namespace = Namespace('signup', description='signup operations')
+signup_namespace = Namespace('signup', description='signup endpoints')
 
 signup_parser = reqparse.RequestParser()
 signup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')
@@ -31,12 +27,18 @@ signup_model = signup_namespace.model('User', {
     'password': fields.String(required=True, description='Password'),
     'email': fields.String(required=True, description='Email'),
     'full_name': fields.String(required=True, description='Full Name'),
-    'role': fields.String(required=True, description='Role', enum=ROLES)
+    'role': fields.String(required=True, description='Role', enum=ROLES),
+    'store_id': fields.Integer(required=True, description='Store ID')
 })
 
 @signup_namespace.route('/')
 class SignupResource(Resource):
+    @api.doc(responses={201: 'User registered successfully', 400: 'Invalid store_id or role', 409: 'Username or email already exists'})
+    @api.expect(signup_model, validate=True)
     def post(self):
+        """
+        Register a new user.
+        """
         data = signup_parser.parse_args()
 
         username = data['username']
@@ -45,13 +47,10 @@ class SignupResource(Resource):
         full_name = data['full_name']
         role = data['role']
 
-
-
         try:
             store_id = int(data['store_id'])
         except ValueError:
             return {'message': 'Invalid store_id. It must be a valid integer.'}, 400
-
 
         existing_user = User.query.filter((User.username == username) | (User.email == email)).first()
         if existing_user:
@@ -62,11 +61,10 @@ class SignupResource(Resource):
 
         hashed_password = bcrypt.generate_password_hash(plain_password).decode('utf-8')
 
-        new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role)
+        new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role, store_id=store_id)
         new_user.save()
 
         return {'message': 'User registered successfully'}, 201
 
 if __name__ == '__main__':
-   
     app.run(debug=True)

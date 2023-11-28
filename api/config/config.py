@@ -12,6 +12,12 @@ class Config:
     JWT_ACCESS_TOKEN_EXPIRES=timedelta(minutes=30)
     JWT_REFRESH_TOKEN_EXPIRES=timedelta(minutes=30)
     JWT_SECRET_KEY=config("JWT_SECRET_KEY")
+    MAIL_SERVER="smtp.gmail.com"
+    MAIL_USERNAME="kibochamark@gmail.com"
+    MAIL_PASSWORD="lmgrcdoixjdiplul"
+    MAIL_PORT=587
+    MAIL_USE_SSL=False
+    MAIL_USE_TLS=True
 
 class DevConfig(Config):
     DEBUG=config("DEBUG", cast=bool)
