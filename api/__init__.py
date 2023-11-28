@@ -45,6 +45,8 @@ def create_app():
     # api blueprints - used for documentation
     api.add_namespace(email_namespace)
     api.add_namespace(suppliers_namespace)
+    api.add_namespace(login_namespace)
+    api.add_namespace(store_namespace)
     
    
     
