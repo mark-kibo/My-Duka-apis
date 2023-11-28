@@ -39,7 +39,7 @@ def create_app():
 
     migrate=Migrate(app, db)
     
-    api=Api(app)
+    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers")
     
 
     # api blueprints - used for documentation
