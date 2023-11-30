@@ -11,16 +11,24 @@ login_parser = reqparse.RequestParser()
 login_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')
 login_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')
 
+login_model=login_namespace.model('Login', {
+    "username": fields.String(required=True),
+    "password": fields.String(required=True)
+})
 @login_namespace.route('/merchant')
 class MerchantLoginResource(Resource):
+    
+    @login_namespace.expect(login_model)
     def post(self):
         data = login_parser.parse_args()
 
         username = data['username']
         password = data['password']
+        
+        
 
         merchant = User.query.filter_by(username=username, role='merchant').first()
-
+        
 
         if merchant and check_password_hash(merchant.password, password):
             access_token = create_access_token(identity=merchant.user_id)
@@ -30,6 +38,8 @@ class MerchantLoginResource(Resource):
 
 @login_namespace.route('/admin')
 class AdminLoginResource(Resource):
+    
+    @login_namespace.expect(login_model)
     def post(self):
         data = login_parser.parse_args()
 
@@ -48,6 +58,7 @@ class AdminLoginResource(Resource):
 
 @login_namespace.route('/clerk')
 class ClerkLoginResource(Resource):
+    @login_namespace.expect(login_model)
     def post(self):
         login_parser = reqparse.RequestParser()
         login_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')

@@ -22,7 +22,9 @@ class Products(db.Model):
 
     receipts = db.relationship('Receipts', backref='product', lazy=True)
     supply_requests = db.relationship('SupplyRequests', backref='product', lazy=True)
-    supplier = db.relationship('Suppliers', back_populates='products', lazy=True)
+    # supplier = db.relationship('Suppliers', back_populates='product', lazy=True)
+    # supplier = db.relationship('Suppliers', back_populates='product', lazy=True, foreign_keys=[supplier_id])
+
     sales = db.relationship('Sales', backref='product', cascade='all, delete-orphan')
 
     # Remove one of the following two lines based on your requirements

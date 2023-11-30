@@ -1,8 +1,8 @@
 from flask import Flask, abort
 from flask_restx import Api, Resource, fields, Namespace, reqparse
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import generate_password_hash, check_password_hash
-from werkzeug.exceptions import BadRequest
+# from flask_bcrypt import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash
 from api.models.users import User 
 
 
@@ -59,7 +59,7 @@ class SignupResource(Resource):
         if role not in ROLES:
             abort(400, 'Invalid role. Choose from: {}'.format(', '.join(ROLES)))
 
-        hashed_password = generate_password_hash(plain_password).decode('utf-8')
+        hashed_password = generate_password_hash(plain_password)
 
         new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role, store_id=store_id)
         new_user.save()
