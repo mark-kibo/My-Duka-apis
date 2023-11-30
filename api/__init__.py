@@ -18,16 +18,13 @@ from .models.sales import Sales
 from .models.receipts import Receipts
 from flask_mail import Mail, Message
 from .email.views import email_namespace
-from api.signup.signupapi import signup_namespace
-from api.login.loginapi import login_namespace
-from api.users.getusersapi import get_users_namespace
-from api.Receipt.receiptsapi import receipts_namespace
-from api.products.productapi import products_namespace
+from .suppliers.app import suppliers_namespace
+from .login.loginapi import login_namespace
+from .stores.views import store_namespace
 # from .models.stores import Store
 
 def create_app():
-    app = Flask(__name__)
-
+    app=Flask(__name__)
     app.config.from_object(config_dict['dev'])
     mail=Mail(app)
     # initialize database
@@ -38,24 +35,26 @@ def create_app():
 
     
     
-    db.init_app(app)
+    
     jwt = JWTManager(app)
 
     migrate=Migrate(app, db)
     
     api=Api(app)
-    
+        
+  
+    # api blueprints - used for documentation
     api.add_namespace(email_namespace)
-    api.add_namespace(signup_namespace) 
+    api.add_namespace(suppliers_namespace)
     api.add_namespace(login_namespace)
-    api.add_namespace(products_namespace)
-    api.add_namespace(receipts_namespace)
-    api.add_namespace(get_users_namespace)
-      
+    
+<<<<<<<<< Temporary merge branch 1
+    api.add_namespace(email_namespace)
+    
    
     
-    # with app.app_context():
-    #     db.create_all()
+    with app.app_context():
+        db.create_all()
         
         
         
@@ -66,13 +65,10 @@ def create_app():
     # @app.shell_context_processor
     # def make_shell_context():
     #     return {
-    #         'db': db,
-    #         'User': User,
-    #         'Messages': Messages,
-    #         'ChatRoom': ChatRoom,
-    #         'hub': Hub
+    #         'db':db,
+    #         'User':User,
+    #         'Messages':Messages,
+    #         'ChatRoom':ChatRoom,
+    #         'hub':Hub
     #     }
     return app
-
-
-

@@ -11,7 +11,7 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     full_name = db.Column(db.String(100), nullable=False)
     role = db.Column(db.String(20), nullable=False)
-    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'))
+    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'), nullable=False)
 
   
     # Define the foreign key relationship for the stores

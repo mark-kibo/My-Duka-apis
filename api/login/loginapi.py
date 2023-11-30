@@ -3,11 +3,7 @@ from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identi
 from werkzeug.security import check_password_hash, generate_password_hash
 from flask import current_app
 
-from api.models.users import User
-from flask_bcrypt import Bcrypt
-
-
-bcrypt = Bcrypt()
+from ..models.users import Users
 
 login_namespace = Namespace('login', description='login endpoints')
 
@@ -63,9 +59,8 @@ class ClerkLoginResource(Resource):
         username = data['username']
         password = data['password']
 
-        clerk = User.query.filter_by(username=username, role='clerk').first()
-
-        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        user = Users.query.filter_by(username=username).first()
+        # user = User(username = "mercy", password="mercy#")
 
         if clerk and bcrypt.check_password_hash(hashed_password, password):
             access_token = create_access_token(identity=clerk.user_id)
