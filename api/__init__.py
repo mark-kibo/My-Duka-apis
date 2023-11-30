@@ -9,7 +9,7 @@ from .utils import db
 from flask_migrate import Migrate
 from flask_jwt_extended import JWTManager
 from .models.association import store_product_association
-from .models.users import Users
+from .models.users import User
 from .models.stores import Store
 from .models.products import Products
 from .models.supplyrequests import SupplyRequests
@@ -21,13 +21,19 @@ from .email.views import email_namespace
 from .suppliers.app import suppliers_namespace
 from .login.loginapi import login_namespace
 from .stores.views import store_namespace
+from .products.views import products_namespace
+from .Users.getusersapi import get_users_namespace
+from .supplyrequests.app import supply_requests_namespace
+from flask_bcrypt import Bcrypt
 # from .models.stores import Store
 
 def create_app():
     app=Flask(__name__)
     app.config.from_object(config_dict['dev'])
     mail=Mail(app)
+   
     # initialize database
+    
     db.init_app(app)
     CORS(app)
     
@@ -36,17 +42,23 @@ def create_app():
     
     
     jwt = JWTManager(app)
+    bycrypt = Bcrypt(app)
 
     migrate=Migrate(app, db)
     
     api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers")
-    
-
+        
+  
     # api blueprints - used for documentation
     api.add_namespace(email_namespace)
     api.add_namespace(suppliers_namespace)
     api.add_namespace(login_namespace)
+    api.add_namespace(email_namespace)
+    api.add_namespace(products_namespace)
     api.add_namespace(store_namespace)
+    api.add_namespace(get_users_namespace)
+    api.add_namespace(supply_requests_namespace)
+    
     
    
     
