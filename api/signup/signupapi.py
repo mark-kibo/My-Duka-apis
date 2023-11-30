@@ -1,14 +1,14 @@
 from flask import Flask, abort
 from flask_restx import Api, Resource, fields, Namespace, reqparse
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
+from flask_bcrypt import generate_password_hash, check_password_hash
 from werkzeug.exceptions import BadRequest
 from api.models.users import User 
 
-app = Flask(__name__)
 
-bcrypt = Bcrypt()
-api = Api(app, version='1.0', title='Your API', description='User Signup API')
+
+
+api = Api()
 
 signup_namespace = Namespace('signup', description='signup endpoints')
 
@@ -59,12 +59,10 @@ class SignupResource(Resource):
         if role not in ROLES:
             abort(400, 'Invalid role. Choose from: {}'.format(', '.join(ROLES)))
 
-        hashed_password = bcrypt.generate_password_hash(plain_password).decode('utf-8')
+        hashed_password = generate_password_hash(plain_password).decode('utf-8')
 
         new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role, store_id=store_id)
         new_user.save()
 
         return {'message': 'User registered successfully'}, 201
 
-if __name__ == '__main__':
-    app.run(debug=True)
