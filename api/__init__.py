@@ -22,7 +22,7 @@ from .suppliers.app import suppliers_namespace
 from .login.loginapi import login_namespace
 from .stores.views import store_namespace
 from .products.views import products_namespace
-from .Users.getusersapi import get_users_namespace
+from .users.getusersapi import get_users_namespace
 from .supplyrequests.app import supply_requests_namespace
 from flask_bcrypt import Bcrypt
 # from .models.stores import Store
