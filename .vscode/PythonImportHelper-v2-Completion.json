@@ -673,7 +673,7 @@
         "kind": 6,
         "importPath": "api.config.config",
         "description": "api.config.config",
-        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo@localhost/myduka'\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig",
+        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo@localhost/mydukka'\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig",
         "detail": "api.config.config",
         "documentation": {}
     },
@@ -1168,16 +1168,7 @@
         "kind": 5,
         "importPath": "api.Users.getusersapi",
         "description": "api.Users.getusersapi",
-        "peekOfCode": "api = Api()\nuser_model = api.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nget_users_namespace = Namespace('users', description='users endpoints')",
-        "detail": "api.Users.getusersapi",
-        "documentation": {}
-    },
-    {
-        "label": "user_model",
-        "kind": 5,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
-        "peekOfCode": "user_model = api.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nget_users_namespace = Namespace('users', description='users endpoints')\nuser_parser = reqparse.RequestParser()",
+        "peekOfCode": "api = Api()\nget_users_namespace = Namespace('users', description='users endpoints')\nuser_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})",
         "detail": "api.Users.getusersapi",
         "documentation": {}
     },
@@ -1186,7 +1177,16 @@
         "kind": 5,
         "importPath": "api.Users.getusersapi",
         "description": "api.Users.getusersapi",
-        "peekOfCode": "get_users_namespace = Namespace('users', description='users endpoints')\nuser_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')\nuser_parser.add_argument('password', type=str, required=True, help='Password of the clerk')\nuser_parser.add_argument('email', type=str, required=True, help='Email of the clerk')\nuser_parser.add_argument('full_name', type=str, required=True, help='Full name of the clerk')\nuser_parser.add_argument('store_id', type=int, required=True, help='Store ID of the clerk')\n@get_users_namespace.route('/merchants')\nclass GetMerchantsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)",
+        "peekOfCode": "get_users_namespace = Namespace('users', description='users endpoints')\nuser_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nuser_parser = reqparse.RequestParser()",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "user_model",
+        "kind": 5,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "user_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nuser_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')",
         "detail": "api.Users.getusersapi",
         "documentation": {}
     },

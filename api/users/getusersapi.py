@@ -10,8 +10,8 @@ from flask_bcrypt import check_password_hash
 api = Api()
 
 
-
-user_model = api.model('User', {
+get_users_namespace = Namespace('users', description='users endpoints')
+user_model = get_users_namespace.model('User', {
     'username': fields.String(description='Username'),
     'password': fields.String(required=True, description='Password'),
     'email': fields.String(description='Email'),
@@ -20,7 +20,7 @@ user_model = api.model('User', {
     'store_id': fields.Integer(description='Store ID')
 })
 
-get_users_namespace = Namespace('users', description='users endpoints')
+
 
 
 user_parser = reqparse.RequestParser()
