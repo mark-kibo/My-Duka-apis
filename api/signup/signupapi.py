@@ -46,11 +46,17 @@ class SignupResource(Resource):
         email = data['email']
         full_name = data['full_name']
         role = data['role']
+        store_id=null
 
-        try:
-            store_id = int(data['store_id'])
-        except ValueError:
-            return {'message': 'Invalid store_id. It must be a valid integer.'}, 400
+        # try:
+        #     store_id = int(data['store_id'])
+        # except ValueError:
+        #     return {'message': 'Invalid store_id. It must be a valid integer.'}, 400
+        if data['store_id']:
+            try:
+                store_id = int(data['store_id'])
+            except ValueError:
+                return {'message': 'Invalid store_id. It must be a valid integer.'}, 400
 
         existing_user = User.query.filter((User.username == username) | (User.email == email)).first()
         if existing_user:
@@ -60,7 +66,7 @@ class SignupResource(Resource):
             abort(400, 'Invalid role. Choose from: {}'.format(', '.join(ROLES)))
 
         hashed_password = generate_password_hash(plain_password)
-
+        
         new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role, store_id=store_id)
         new_user.save()
 
