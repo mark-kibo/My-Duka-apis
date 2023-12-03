@@ -7,7 +7,6 @@ class Store(db.Model):
 
     store_id = db.Column(db.Integer(), primary_key=True)
     store_name=db.Column(db.String(255), nullable=True)
-    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))
     location = db.Column(db.String(255))
     user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'), nullable=True)
     
