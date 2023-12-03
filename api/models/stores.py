@@ -7,12 +7,14 @@ class Store(db.Model):
 
     store_id = db.Column(db.Integer(), primary_key=True)
     store_name=db.Column(db.String(255), nullable=True)
-    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))
     supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))
     location = db.Column(db.String(255))
+    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'), nullable=True)
+    
     
   # Relationship with the 'Products' table through the association table
     products = db.relationship('Products', secondary=store_product_association, back_populates='stores')
+    user = db.relationship('User', back_populates='stores', lazy=True)
     
     supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)
 
