@@ -46,7 +46,7 @@ class SignupResource(Resource):
         email = data['email']
         full_name = data['full_name']
         role = data['role']
-        store_id=null
+        store_id=None
 
         # try:
         #     store_id = int(data['store_id'])
