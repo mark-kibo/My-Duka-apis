@@ -18,7 +18,7 @@ class User(db.Model):
 
   
     # Define the foreign key relationship for the stores
-    stores = db.relationship('Store', back_populates='user', lazy=True)
+    stores = db.relationship('Store', back_populates='user', lazy=True, foreign_keys=[store_id])
     supply_requests = db.relationship('SupplyRequests', backref='user', cascade='all, delete-orphan')
 
     def save(self):
