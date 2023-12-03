@@ -18,7 +18,6 @@ signup_parser.add_argument('password', type=str, required=True, help='Password c
 signup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')
 signup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')
 signup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')
-signup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')
 
 ROLES = ['merchant', 'admin', 'clerk']
 
@@ -28,7 +27,6 @@ signup_model = signup_namespace.model('User', {
     'email': fields.String(required=True, description='Email'),
     'full_name': fields.String(required=True, description='Full Name'),
     'role': fields.String(required=True, description='Role', enum=ROLES),
-    'store_id': fields.Integer(required=True, description='Store ID')
 })
 
 @signup_namespace.route('/')
@@ -48,7 +46,7 @@ class SignupResource(Resource):
         role = data['role']
 
         try:
-            store_id = int(data['store_id'])
+            store_id = data.get('store_id')
         except ValueError:
             return {'message': 'Invalid store_id. It must be a valid integer.'}, 400
 
@@ -60,9 +58,11 @@ class SignupResource(Resource):
             abort(400, 'Invalid role. Choose from: {}'.format(', '.join(ROLES)))
 
         hashed_password = generate_password_hash(plain_password)
-
-        new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role, store_id=store_id)
+        # try:
+        new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role)
         new_user.save()
 
         return {'message': 'User registered successfully'}, 201
 
+        # except:
+        #     return {"error":"unable to create user"}
