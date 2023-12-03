@@ -66,5 +66,5 @@ class SignupResource(Resource):
         hashed_password = generate_password_hash(plain_password)
         new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role)
         new_user.save()
-
+        
         return {'message': 'User registered successfully'}, 201
