@@ -13,8 +13,6 @@ class Store(db.Model):
     
   # Relationship with the 'Products' table through the association table
     products = db.relationship('Products', secondary=store_product_association, back_populates='stores')
-
-
     
     supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)
 

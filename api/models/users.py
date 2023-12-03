@@ -11,14 +11,10 @@ class User(db.Model):
     email = db.Column(db.String(100), unique=True, nullable=False)
     full_name = db.Column(db.String(100), nullable=False)
     role = db.Column(db.String(20), nullable=False)
-
     store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'), nullable=True)
-
-
-
-  
+    
     # Define the foreign key relationship for the stores
-    stores = db.relationship('Store', back_populates='user', lazy=True, foreign_keys=[store_id])
+    stores = db.relationship('Store', backref='user', foreign_keys=[store_id])
     supply_requests = db.relationship('SupplyRequests', backref='user', cascade='all, delete-orphan')
 
     def save(self):
