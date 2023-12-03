@@ -24,6 +24,7 @@ class Products(db.Model):
     supply_requests = db.relationship('SupplyRequests', backref='product', lazy=True)
     # supplier = db.relationship('Suppliers', back_populates='product', lazy=True)
     # supplier = db.relationship('Suppliers', back_populates='product', lazy=True, foreign_keys=[supplier_id])
+    supplier = db.relationship('Suppliers', foreign_keys=[supplier_id])
 
     sales = db.relationship('Sales', backref='product', cascade='all, delete-orphan')
 

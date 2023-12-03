@@ -964,7 +964,7 @@
         "kind": 6,
         "importPath": "api.models.stores",
         "description": "api.models.stores",
-        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    store_name=db.Column(db.String(255), nullable=True)\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))\n    location = db.Column(db.String(255))\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)",
+        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    store_name=db.Column(db.String(255), nullable=True)\n    location = db.Column(db.String(255))\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'), nullable=True)\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)\n    def save(self):",
         "detail": "api.models.stores",
         "documentation": {}
     },
@@ -1171,7 +1171,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "api = Api()\nsignup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {",
+        "peekOfCode": "api = Api()\nsignup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1180,7 +1180,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "signup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),",
+        "peekOfCode": "signup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1189,7 +1189,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "signup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),",
+        "peekOfCode": "signup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1198,7 +1198,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "ROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES),\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):",
+        "peekOfCode": "ROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES)\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1207,7 +1207,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "signup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES),\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):\n    @api.doc(responses={201: 'User registered successfully', 400: 'Invalid store_id or role', 409: 'Username or email already exists'})",
+        "peekOfCode": "signup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES)\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):\n    @api.doc(responses={201: 'User registered successfully', 400: 'Invalid store_id or role', 409: 'Username or email already exists'})",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1243,7 +1243,7 @@
         "kind": 5,
         "importPath": "api.stores.views",
         "description": "api.stores.views",
-        "peekOfCode": "store_model = store_namespace.model('store', {\n    'store_id': fields.Integer(description='The unique identifier of a store'),\n    'store_name': fields.String(description='The name of the store'),\n    'location': fields.String(description='The location address of the store'),\n})\n@store_namespace.route(\"/\")\nclass StoreList(Resource):\n    # @store_namespace.marshal_list_with(store_model)\n    def get(self):\n        \"get all stores available\"",
+        "peekOfCode": "store_model = store_namespace.model('store', {\n    'store_id': fields.Integer(description='The unique identifier of a store'),\n    'store_name': fields.String(description='The name of the store'),\n    'location': fields.String(description='The location address of the store'),\n    'user_id': fields.Integer(description='The owner of the store'),\n})\n@store_namespace.route(\"/\")\nclass StoreList(Resource):\n    # @store_namespace.marshal_list_with(store_model)\n    def get(self):",
         "detail": "api.stores.views",
         "documentation": {}
     },
