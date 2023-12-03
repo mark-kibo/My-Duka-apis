@@ -18,7 +18,7 @@ signup_parser.add_argument('password', type=str, required=True, help='Password c
 signup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')
 signup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')
 signup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')
-signup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')
+signup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')
 
 ROLES = ['merchant', 'admin', 'clerk']
 
