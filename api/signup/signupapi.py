@@ -28,7 +28,7 @@ signup_model = signup_namespace.model('User', {
     'email': fields.String(required=True, description='Email'),
     'full_name': fields.String(required=True, description='Full Name'),
     'role': fields.String(required=True, description='Role', enum=ROLES),
-    'store_id': fields.Integer(required=True, description='Store ID')
+    'store_id': fields.Integer(required=False, description='Store ID')
 })
 
 @signup_namespace.route('/')
