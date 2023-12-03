@@ -15,6 +15,7 @@ store_model = store_namespace.model('store', {
     'store_id': fields.Integer(description='The unique identifier of a store'),
     'store_name': fields.String(description='The name of the store'),
     'location': fields.String(description='The location address of the store'),
+    'user_id': fields.Integer(description='The owner of the store'),
 })
 
 
@@ -49,7 +50,7 @@ class StoreList(Resource):
             new_store = Store(
                 store_name=data.get('store_name'),
                 location=data.get('location'),
-                # user_id=data.get('user_id'),
+                user_id=data.get('user_id'),
                 # supplier_id=data.get('supplier_id')
             )
             print(new_store.location)
