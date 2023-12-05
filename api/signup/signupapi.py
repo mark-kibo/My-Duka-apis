@@ -1,15 +1,15 @@
 from flask import Flask, abort
 from flask_restx import Api, Resource, fields, Namespace, reqparse
 from flask_sqlalchemy import SQLAlchemy
-from flask_bcrypt import Bcrypt
+from flask_bcrypt import generate_password_hash, check_password_hash
 from werkzeug.exceptions import BadRequest
 from api.models.users import User, Store
 
 
-app = Flask(__name__)
 
-bcrypt = Bcrypt()
-api = Api(app, version='1.0', title='Your API', description='User Signup API')
+
+app = Flask(__name__)
+api = Api()
 
 signup_namespace = Namespace('signup', description='signup endpoints')
 

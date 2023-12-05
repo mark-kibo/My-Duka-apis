@@ -54,6 +54,7 @@ def create_app():
 
     
     jwt = JWTManager(app)
+    bycrypt = Bcrypt(app)
 
     migrate=Migrate(app, db)
 
@@ -77,7 +78,7 @@ def create_app():
     api.add_namespace(store_namespace)
     
     api.add_namespace(products_namespace)
-    api.add_namespace(receipts_namespace)
+    api.add_namespace(store_namespace)
     api.add_namespace(get_users_namespace)
       
    

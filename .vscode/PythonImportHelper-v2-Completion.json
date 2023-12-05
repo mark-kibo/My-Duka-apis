@@ -8,12 +8,28 @@
         "documentation": {}
     },
     {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "URL",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
         "documentation": {}
     },
     {
@@ -65,6 +81,286 @@
         "documentation": {}
     },
     {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Api",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal_with",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Api",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal_with",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Api",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Api",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
         "label": "request",
         "importPath": "flask",
         "description": "flask",
@@ -97,6 +393,70 @@
         "documentation": {}
     },
     {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "abort",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
+        "documentation": {}
+    },
+    {
         "label": "HTTPStatus",
         "importPath": "http",
         "description": "http",
@@ -113,11 +473,100 @@
         "documentation": {}
     },
     {
-        "label": "Products",
-        "importPath": "api.models.product",
-        "description": "api.models.product",
+        "label": "jwt_required",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
         "isExtraImport": true,
-        "detail": "api.models.product",
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
+        "isExtraImport": true,
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "get_jwt_identity",
+        "importPath": "flask_jwt_extended",
+        "description": "flask_jwt_extended",
+        "isExtraImport": true,
+        "detail": "flask_jwt_extended",
+        "documentation": {}
+    },
+    {
+        "label": "werkzeug.security",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "check_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "generate_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "Faker",
+        "importPath": "faker",
+        "description": "faker",
+        "isExtraImport": true,
+        "detail": "faker",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "runserver",
+        "description": "runserver",
+        "isExtraImport": true,
+        "detail": "runserver",
+        "documentation": {}
+    },
+    {
+        "label": "create_app",
+        "importPath": "runserver",
+        "description": "runserver",
+        "isExtraImport": true,
+        "detail": "runserver",
+        "documentation": {}
+    },
+    {
+        "label": "randint",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "SQLAlchemy",
+        "importPath": "flask_sqlalchemy",
+        "description": "flask_sqlalchemy",
+        "isExtraImport": true,
+        "detail": "flask_sqlalchemy",
         "documentation": {}
     },
     {
@@ -129,39 +578,39 @@
         "documentation": {}
     },
     {
-        "label": "Sales",
-        "importPath": "api.models.sales",
-        "description": "api.models.sales",
+        "label": "generate_password_hash",
+        "importPath": "flask_bcrypt",
+        "description": "flask_bcrypt",
         "isExtraImport": true,
-        "detail": "api.models.sales",
+        "detail": "flask_bcrypt",
         "documentation": {}
     },
     {
-        "label": "Store",
-        "importPath": "api.models.store",
-        "description": "api.models.store",
+        "label": "check_password_hash",
+        "importPath": "flask_bcrypt",
+        "description": "flask_bcrypt",
         "isExtraImport": true,
-        "detail": "api.models.store",
+        "detail": "flask_bcrypt",
         "documentation": {}
     },
     {
-        "label": "Suppliers",
-        "importPath": "api.models.supplier",
-        "description": "api.models.supplier",
+        "label": "check_password_hash",
+        "importPath": "flask_bcrypt",
+        "description": "flask_bcrypt",
         "isExtraImport": true,
-        "detail": "api.models.supplier",
+        "detail": "flask_bcrypt",
         "documentation": {}
     },
     {
-        "label": "SupplyRequests",
-        "importPath": "api.models.supplyRequest",
-        "description": "api.models.supplyRequest",
+        "label": "BadRequest",
+        "importPath": "werkzeug.exceptions",
+        "description": "werkzeug.exceptions",
         "isExtraImport": true,
-        "detail": "api.models.supplyRequest",
+        "detail": "werkzeug.exceptions",
         "documentation": {}
     },
     {
-        "label": "Users",
+        "label": "User",
         "importPath": "api.models.users",
         "description": "api.models.users",
         "isExtraImport": true,
@@ -224,7 +673,7 @@
         "kind": 6,
         "importPath": "api.config.config",
         "description": "api.config.config",
-        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI=\"postgresql://postgres:kibo@localhost/mydukka\"\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig\n}",
+        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo@localhost/mydukka'\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig",
         "detail": "api.config.config",
         "documentation": {}
     },
@@ -253,6 +702,51 @@
         "description": "api.email.views",
         "peekOfCode": "class ConfirmTokenizeEmail(Resource):\n    def get(self, token):\n        try:\n            # confirm the tokenized email\n            email = s.loads(token, salt=\"email-confirm\", max_age=60)\n            print(email)\n            if email:\n                return email,  HTTPStatus.OK\n            else:\n                return {",
         "detail": "api.email.views",
+        "documentation": {}
+    },
+    {
+        "label": "MerchantLoginResource",
+        "kind": 6,
+        "importPath": "api.login.loginapi",
+        "description": "api.login.loginapi",
+        "peekOfCode": "class MerchantLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        merchant = User.query.filter_by(username=username, role='merchant').first()\n        if merchant and check_password_hash(merchant.password, password):\n            access_token = create_access_token(identity=merchant.user_id)\n            return {'message': 'Merchant login successful', 'access_token': access_token}\n        return {'message': 'Invalid credentials'}, 401",
+        "detail": "api.login.loginapi",
+        "documentation": {}
+    },
+    {
+        "label": "AdminLoginResource",
+        "kind": 6,
+        "importPath": "api.login.loginapi",
+        "description": "api.login.loginapi",
+        "peekOfCode": "class AdminLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        admin = User.query.filter_by(username=username, role='admin').first()\n        if admin and check_password_hash(admin.password, password):\n            access_token = create_access_token(identity=admin.user_id)\n            return {'message': 'Admin login successful', 'access_token': access_token}\n        return {'message': 'Invalid credentials'}, 401",
+        "detail": "api.login.loginapi",
+        "documentation": {}
+    },
+    {
+        "label": "ClerkLoginResource",
+        "kind": 6,
+        "importPath": "api.login.loginapi",
+        "description": "api.login.loginapi",
+        "peekOfCode": "class ClerkLoginResource(Resource):\n    def post(self):\n        login_parser = reqparse.RequestParser()\n        login_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\n        login_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        clerk = User.query.filter_by(username=username).first()\n        # user = User(username = \"mercy\", password=\"mercy#\")",
+        "detail": "api.login.loginapi",
+        "documentation": {}
+    },
+    {
+        "label": "login_namespace",
+        "kind": 5,
+        "importPath": "api.login.loginapi",
+        "description": "api.login.loginapi",
+        "peekOfCode": "login_namespace = Namespace('login', description='login endpoints')\nlogin_parser = reqparse.RequestParser()\nlogin_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nlogin_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\n@login_namespace.route('/merchant')\nclass MerchantLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']",
+        "detail": "api.login.loginapi",
+        "documentation": {}
+    },
+    {
+        "label": "login_parser",
+        "kind": 5,
+        "importPath": "api.login.loginapi",
+        "description": "api.login.loginapi",
+        "peekOfCode": "login_parser = reqparse.RequestParser()\nlogin_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nlogin_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\n@login_namespace.route('/merchant')\nclass MerchantLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        merchant = User.query.filter_by(username=username, role='merchant').first()",
+        "detail": "api.login.loginapi",
         "documentation": {}
     },
     {
@@ -292,11 +786,83 @@
         "documentation": {}
     },
     {
+        "label": "seed_users",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_users():\n    stores = Store.query.all()\n    for _ in range(5):\n        user = User(\n            username=fake.user_name(),\n            password=fake.password(),\n            email=fake.email(),\n            full_name=fake.name(),\n            role=fake.random_element(elements=('merchant', 'admin', 'clerk')),\n            store_id=stores[randint(0, len(stores) - 1)].store_id  ",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_suppliers",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_suppliers():\n    existing_supplier_ids = [supplier.supplier_id for supplier in Suppliers.query.all()]\n    for i in range(1, 3):\n        while i in existing_supplier_ids:\n            i += 1\n        supplier = Suppliers(\n            supplier_id=i,\n            supply_name=fake.company(),\n            supplier_contact=fake.phone_number(),\n            supplier_email=fake.email(),",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_stores",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_stores():\n    users = User.query.filter_by(role='clerk').limit(5).all()  \n    suppliers = Suppliers.query.all()\n    for user in users:\n        store = Store(\n            user=user,\n            supplier_id=randint(1, len(suppliers)),\n            location=fake.address()\n        )\n        db.session.add(store)",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_products",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_products():\n    stores = Store.query.all()\n    suppliers = Suppliers.query.all()\n    for _ in range(10):\n        product = Products(\n            product_name=fake.word(),\n            description=fake.text().replace('\\n', ' '),  \n            category=fake.word(),\n            brand=fake.company(),\n            quantity=randint(1, 100),",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_receipts",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_receipts():\n    products = Products.query.all()\n    for product in products:\n        payment_status = fake.random_element(elements=('paid', 'unpaid'))\n        receipt = Receipts(\n            date_time=datetime.now(),\n            product=product,\n            quantity_received=randint(1, 20),\n            payment_status=payment_status\n        )",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_sales",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_sales():\n    products = Products.query.all()\n    stores = Store.query.all()\n    for _ in range(5):\n        sale = Sales(\n            product_id=products[randint(0, len(products) - 1)].product_id,  \n            product_quantity=randint(1, 10),\n            store_id=stores[randint(0, len(stores) - 1)].store_id,\n            amount=randint(50, 500)\n        )",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "seed_supply_requests",
+        "kind": 2,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "def seed_supply_requests():\n    clerks = User.query.filter_by(role='clerk').all()\n    products = Products.query.all()\n    for clerk in clerks:\n        request = SupplyRequests(\n            clerk_id=clerk.user_id,  \n            product_id=products[randint(0, len(products) - 1)].product_id,\n            quantity_requested=randint(5, 30),\n            reason_for_request=fake.sentence(),\n            received_items=randint(1, 10),",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
+        "label": "fake",
+        "kind": 5,
+        "importPath": "api.models.seed",
+        "description": "api.models.seed",
+        "peekOfCode": "fake = Faker()\ndef seed_users():\n    stores = Store.query.all()\n    for _ in range(5):\n        user = User(\n            username=fake.user_name(),\n            password=fake.password(),\n            email=fake.email(),\n            full_name=fake.name(),\n            role=fake.random_element(elements=('merchant', 'admin', 'clerk')),",
+        "detail": "api.models.seed",
+        "documentation": {}
+    },
+    {
         "label": "Store",
         "kind": 6,
         "importPath": "api.models.stores",
         "description": "api.models.stores",
-        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    location = db.Column(db.String(255))\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))",
+        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    store_name=db.Column(db.String(255), nullable=True)\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))\n    location = db.Column(db.String(255))\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)",
         "detail": "api.models.stores",
         "documentation": {}
     },
@@ -305,7 +871,7 @@
         "kind": 6,
         "importPath": "api.models.suppliers",
         "description": "api.models.suppliers",
-        "peekOfCode": "class Suppliers(db.Model):\n    __tablename__ = 'suppliers'\n    supplier_id = db.Column(db.Integer(), primary_key=True)\n    supply_name = db.Column(db.String(255))\n    supplier_contact = db.Column(db.String(50))\n    supplier_email = db.Column(db.String(255))\n    supplier_address = db.Column(db.String(255))\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))",
+        "peekOfCode": "class Suppliers(db.Model):\n    __tablename__ = 'suppliers'\n    supplier_id = db.Column(db.Integer(), primary_key=True)\n    supply_name = db.Column(db.String(255))\n    supplier_contact = db.Column(db.String(50))\n    supplier_email = db.Column(db.String(255))\n    supplier_address = db.Column(db.String(255))\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'), nullable=True)\n    store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))",
         "detail": "api.models.suppliers",
         "documentation": {}
     },
@@ -314,26 +880,323 @@
         "kind": 6,
         "importPath": "api.models.supplyrequests",
         "description": "api.models.supplyrequests",
-        "peekOfCode": "class SupplyRequests(db.Model):\n    __tablename__ = 'supply_requests'\n    request_id = db.Column(db.Integer(), primary_key=True)\n    clerk_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    quantity_requested = db.Column(db.Integer())\n    reason_for_request = db.Column(db.String(255))\n    received_items = db.Column(db.Integer())\n    received = db.Column(db.Boolean())\n    approved = db.Column(db.Boolean())",
+        "peekOfCode": "class SupplyRequests(db.Model):\n    __tablename__ = 'supply_requests'\n    request_id = db.Column(db.Integer(), primary_key=True)\n    users_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    quantity_requested = db.Column(db.Integer())\n    reason_for_request = db.Column(db.String(255))\n    received_items = db.Column(db.Integer())\n    received = db.Column(db.Boolean())\n    approved = db.Column(db.Boolean())",
         "detail": "api.models.supplyrequests",
         "documentation": {}
     },
     {
-        "label": "Users",
+        "label": "User",
         "kind": 6,
         "importPath": "api.models.users",
         "description": "api.models.users",
-        "peekOfCode": "class Users(db.Model):\n    __tablename__= \"users\"\n    user_id = db.Column(db.Integer(), primary_key=True)\n    username = db.Column(db.String(50), unique=True, nullable=False)\n    password = db.Column(db.String(255), nullable=False)\n    email = db.Column(db.String(100), unique=True, nullable=False)\n    full_name = db.Column(db.String(100), nullable=False)\n    role = db.Column(db.String(20), nullable=False)\n    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'))\n    # Define the foreign key relationship for the stores",
+        "peekOfCode": "class User(db.Model):\n    __tablename__= \"users\"\n    user_id = db.Column(db.Integer(), primary_key=True)\n    username = db.Column(db.String(50), unique=True, nullable=False)\n    password = db.Column(db.String(255), nullable=False)\n    email = db.Column(db.String(100), unique=True, nullable=False)\n    full_name = db.Column(db.String(100), nullable=False)\n    role = db.Column(db.String(20), nullable=False)\n    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'), nullable=False)\n    # Define the foreign key relationship for the stores",
         "detail": "api.models.users",
         "documentation": {}
     },
     {
-        "label": "create_dummy_data",
-        "kind": 2,
-        "importPath": "api.create_data",
-        "description": "api.create_data",
-        "peekOfCode": "def create_dummy_data():\n    # Users\n    user1 = Users(username=\"john_doe\", password=\"password1\", email=\"john@example.com\", full_name=\"John Doe\", role=\"superuser\")\n    user2 = Users(username=\"jane_doe\", password=\"password2\", email=\"jane@example.com\", full_name=\"Jane Doe\", role=\"admin\")\n    user3 = Users(username=\"bob_smith\", password=\"password3\", email=\"bob@example.com\", full_name=\"Bob Smith\", role=\"data entry clerk\")\n    db.session.add_all([user1, user2, user3])\n    db.session.commit()\n    # Products\n    product1 = Products(product_name=\"Laptop\", description=\"High-performance laptop\", category=\"Electronics\", brand=\"ABC\", quantity=50, buying_price=800.0, selling_price=1200.0, payment_status=\"unpaid\", image_url=\"laptop_image.jpg\")\n    product2 = Products(product_name=\"Smartphone\", description=\"Latest smartphone model\", category=\"Electronics\", brand=\"XYZ\", quantity=100, buying_price=500.0, selling_price=800.0, payment_status=\"paid\", image_url=\"smartphone_image.jpg\")",
-        "detail": "api.create_data",
+        "label": "ProductsResource",
+        "kind": 6,
+        "importPath": "api.products.views",
+        "description": "api.products.views",
+        "peekOfCode": "class ProductsResource(Resource):\n    @api.doc('list_products')\n    @marshal_with(product_model, envelope='products')\n    def get(self):\n        \"\"\"\n        Get a list of all products.\n        \"\"\"\n        products = Products.query.all()\n        return products\n    @api.doc('create_product')",
+        "detail": "api.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "ProductResource",
+        "kind": 6,
+        "importPath": "api.products.views",
+        "description": "api.products.views",
+        "peekOfCode": "class ProductResource(Resource):\n    @api.doc('get_product')\n    @marshal_with(product_model)\n    def get(self, product_id):\n        \"\"\"\n        Get details of a specific product.\n        \"\"\"\n        product = Products.query.filter_by(product_id=product_id).first()\n        return product\n    @api.doc('update_product')",
+        "detail": "api.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "api",
+        "kind": 5,
+        "importPath": "api.products.views",
+        "description": "api.products.views",
+        "peekOfCode": "api = Api()\n# Namespace for Products\nproducts_namespace = Namespace('products', description='products endpoints')\n# Request parser for parsing JSON data in requests\nproduct_parser = reqparse.RequestParser()\nproduct_parser.add_argument('product_name', type=str, required=True, help='Product name is required')\nproduct_parser.add_argument('description', type=str)\nproduct_parser.add_argument('category', type=str)\nproduct_parser.add_argument('brand', type=str)\nproduct_parser.add_argument('quantity', type=int)",
+        "detail": "api.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "products_namespace",
+        "kind": 5,
+        "importPath": "api.products.views",
+        "description": "api.products.views",
+        "peekOfCode": "products_namespace = Namespace('products', description='products endpoints')\n# Request parser for parsing JSON data in requests\nproduct_parser = reqparse.RequestParser()\nproduct_parser.add_argument('product_name', type=str, required=True, help='Product name is required')\nproduct_parser.add_argument('description', type=str)\nproduct_parser.add_argument('category', type=str)\nproduct_parser.add_argument('brand', type=str)\nproduct_parser.add_argument('quantity', type=int)\nproduct_parser.add_argument('buying_price', type=int)\nproduct_parser.add_argument('selling_price', type=int)",
+        "detail": "api.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "product_parser",
+        "kind": 5,
+        "importPath": "api.products.views",
+        "description": "api.products.views",
+        "peekOfCode": "product_parser = reqparse.RequestParser()\nproduct_parser.add_argument('product_name', type=str, required=True, help='Product name is required')\nproduct_parser.add_argument('description', type=str)\nproduct_parser.add_argument('category', type=str)\nproduct_parser.add_argument('brand', type=str)\nproduct_parser.add_argument('quantity', type=int)\nproduct_parser.add_argument('buying_price', type=int)\nproduct_parser.add_argument('selling_price', type=int)\nproduct_parser.add_argument('payment_status', type=str)\nproduct_parser.add_argument('image_url', type=str)",
+        "detail": "api.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "product_model",
+        "kind": 5,
+        "importPath": "api.products.views",
+        "description": "api.products.views",
+        "peekOfCode": "product_model = api.model('Product', {\n    'product_id': fields.Integer,\n    'product_name': fields.String,\n    'description': fields.String,\n    'category': fields.String,\n    'brand': fields.String,\n    'quantity': fields.Integer,\n    'buying_price': fields.Integer,\n    'selling_price': fields.Integer,\n    'payment_status': fields.String,",
+        "detail": "api.products.views",
+        "documentation": {}
+    },
+    {
+        "label": "ReceiptsResource",
+        "kind": 6,
+        "importPath": "api.Receipt.receiptsapi",
+        "description": "api.Receipt.receiptsapi",
+        "peekOfCode": "class ReceiptsResource(Resource):\n    @marshal_with(receipt_model, envelope='receipts')\n    def get(self):\n        receipts = Receipts.query.all()\n        return receipts\n    @marshal_with(receipt_model)\n    def post(self):\n        args = receipt_parser.parse_args()\n        new_receipt = Receipts(\n            date_time=args['date_time'],",
+        "detail": "api.Receipt.receiptsapi",
+        "documentation": {}
+    },
+    {
+        "label": "ReceiptResource",
+        "kind": 6,
+        "importPath": "api.Receipt.receiptsapi",
+        "description": "api.Receipt.receiptsapi",
+        "peekOfCode": "class ReceiptResource(Resource):\n    @marshal_with(receipt_model)\n    def get(self, receipt_id):\n        receipt = Receipts.query.filter_by(receipt_id=receipt_id).first()\n        return receipt\n    @marshal_with(receipt_model)\n    def patch(self, receipt_id):\n        args = receipt_parser.parse_args()\n        receipt = Receipts.query.filter_by(receipt_id=receipt_id).first()\n        receipt.date_time = args['date_time']",
+        "detail": "api.Receipt.receiptsapi",
+        "documentation": {}
+    },
+    {
+        "label": "api",
+        "kind": 5,
+        "importPath": "api.Receipt.receiptsapi",
+        "description": "api.Receipt.receiptsapi",
+        "peekOfCode": "api = Api()\nreceipts_namespace = Namespace('receipts', description='receipts endpoints')\nreceipt_parser = reqparse.RequestParser()\nreceipt_parser.add_argument('date_time', type=str, required=True, help='Date and time of the receipt')\nreceipt_parser.add_argument('product_id', type=int, required=True, help='ID of the product')\nreceipt_parser.add_argument('quantity_received', type=int, required=True, help='Quantity received')\nreceipt_parser.add_argument('payment_status', type=str, required=True, help='Payment status')\nreceipt_model = api.model('Receipt', {\n    'receipt_id': fields.Integer,\n    'date_time': fields.String,",
+        "detail": "api.Receipt.receiptsapi",
+        "documentation": {}
+    },
+    {
+        "label": "receipts_namespace",
+        "kind": 5,
+        "importPath": "api.Receipt.receiptsapi",
+        "description": "api.Receipt.receiptsapi",
+        "peekOfCode": "receipts_namespace = Namespace('receipts', description='receipts endpoints')\nreceipt_parser = reqparse.RequestParser()\nreceipt_parser.add_argument('date_time', type=str, required=True, help='Date and time of the receipt')\nreceipt_parser.add_argument('product_id', type=int, required=True, help='ID of the product')\nreceipt_parser.add_argument('quantity_received', type=int, required=True, help='Quantity received')\nreceipt_parser.add_argument('payment_status', type=str, required=True, help='Payment status')\nreceipt_model = api.model('Receipt', {\n    'receipt_id': fields.Integer,\n    'date_time': fields.String,\n    'product_id': fields.Integer,",
+        "detail": "api.Receipt.receiptsapi",
+        "documentation": {}
+    },
+    {
+        "label": "receipt_parser",
+        "kind": 5,
+        "importPath": "api.Receipt.receiptsapi",
+        "description": "api.Receipt.receiptsapi",
+        "peekOfCode": "receipt_parser = reqparse.RequestParser()\nreceipt_parser.add_argument('date_time', type=str, required=True, help='Date and time of the receipt')\nreceipt_parser.add_argument('product_id', type=int, required=True, help='ID of the product')\nreceipt_parser.add_argument('quantity_received', type=int, required=True, help='Quantity received')\nreceipt_parser.add_argument('payment_status', type=str, required=True, help='Payment status')\nreceipt_model = api.model('Receipt', {\n    'receipt_id': fields.Integer,\n    'date_time': fields.String,\n    'product_id': fields.Integer,\n    'quantity_received': fields.Integer,",
+        "detail": "api.Receipt.receiptsapi",
+        "documentation": {}
+    },
+    {
+        "label": "receipt_model",
+        "kind": 5,
+        "importPath": "api.Receipt.receiptsapi",
+        "description": "api.Receipt.receiptsapi",
+        "peekOfCode": "receipt_model = api.model('Receipt', {\n    'receipt_id': fields.Integer,\n    'date_time': fields.String,\n    'product_id': fields.Integer,\n    'quantity_received': fields.Integer,\n    'payment_status': fields.String,\n})\n@receipts_namespace.route('/')\nclass ReceiptsResource(Resource):\n    @marshal_with(receipt_model, envelope='receipts')",
+        "detail": "api.Receipt.receiptsapi",
+        "documentation": {}
+    },
+    {
+        "label": "SignupResource",
+        "kind": 6,
+        "importPath": "api.signup.signupapi",
+        "description": "api.signup.signupapi",
+        "peekOfCode": "class SignupResource(Resource):\n    @api.doc(responses={201: 'User registered successfully', 400: 'Invalid store_id or role', 409: 'Username or email already exists'})\n    @api.expect(signup_model, validate=True)\n    def post(self):\n        \"\"\"\n        Register a new user.\n        \"\"\"\n        data = signup_parser.parse_args()\n        username = data['username']\n        plain_password = data['password']",
+        "detail": "api.signup.signupapi",
+        "documentation": {}
+    },
+    {
+        "label": "api",
+        "kind": 5,
+        "importPath": "api.signup.signupapi",
+        "description": "api.signup.signupapi",
+        "peekOfCode": "api = Api()\nsignup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']",
+        "detail": "api.signup.signupapi",
+        "documentation": {}
+    },
+    {
+        "label": "signup_namespace",
+        "kind": 5,
+        "importPath": "api.signup.signupapi",
+        "description": "api.signup.signupapi",
+        "peekOfCode": "signup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {",
+        "detail": "api.signup.signupapi",
+        "documentation": {}
+    },
+    {
+        "label": "signup_parser",
+        "kind": 5,
+        "importPath": "api.signup.signupapi",
+        "description": "api.signup.signupapi",
+        "peekOfCode": "signup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),",
+        "detail": "api.signup.signupapi",
+        "documentation": {}
+    },
+    {
+        "label": "ROLES",
+        "kind": 5,
+        "importPath": "api.signup.signupapi",
+        "description": "api.signup.signupapi",
+        "peekOfCode": "ROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES),\n    'store_id': fields.Integer(required=True, description='Store ID')\n})\n@signup_namespace.route('/')",
+        "detail": "api.signup.signupapi",
+        "documentation": {}
+    },
+    {
+        "label": "signup_model",
+        "kind": 5,
+        "importPath": "api.signup.signupapi",
+        "description": "api.signup.signupapi",
+        "peekOfCode": "signup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES),\n    'store_id': fields.Integer(required=True, description='Store ID')\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):",
+        "detail": "api.signup.signupapi",
+        "documentation": {}
+    },
+    {
+        "label": "StoreList",
+        "kind": 6,
+        "importPath": "api.stores.views",
+        "description": "api.stores.views",
+        "peekOfCode": "class StoreList(Resource):\n    # @store_namespace.marshal_list_with(store_model)\n    def get(self):\n        \"get all stores available\"\n        try:\n            stores = Store.query.all()\n            print(stores)  # Check what is retrieved from the database\n            if stores:\n                return marshal(stores, store_model), HTTPStatus.OK\n            else:",
+        "detail": "api.stores.views",
+        "documentation": {}
+    },
+    {
+        "label": "MutateStore",
+        "kind": 6,
+        "importPath": "api.stores.views",
+        "description": "api.stores.views",
+        "peekOfCode": "class MutateStore(Resource):\n    def get(self, id):\n        \"\"\"Get a single store by its ID\"\"\"\n        try:\n            store = Store.query.filter_by(id=id).first()\n            if not store:\n                return {\"message\": f\"Store with id '{id}' doesn't exist.\"}, HTTPStatus.NOT_FOUND\n            return marshal(store, store_model), HTTPStatus.OK\n        except Exception as e:\n            print(f\"Error: {e}\")",
+        "detail": "api.stores.views",
+        "documentation": {}
+    },
+    {
+        "label": "DeletStore",
+        "kind": 6,
+        "importPath": "api.stores.views",
+        "description": "api.stores.views",
+        "peekOfCode": "class DeletStore(Resource):\n    def delete(self, role_name, store_id):\n        \"\"\"Delete a store and all of its associated products\"\"\"\n        try:\n            # check if the user has permission to do that\n            if int(role_name) != \"merchant\":\n                return {\"message\": \"You don't have permissions to perform this action!\"}, HTTPStatus.UNAUTHORIZED\n            store = Store.query.filter_by(store_id=store_id).first()\n            if not store:\n                return {\"message\": f\"Store with id '{store_id}' doesn't exist.\"}, HTTPStatus.NOT_FOUND",
+        "detail": "api.stores.views",
+        "documentation": {}
+    },
+    {
+        "label": "store_model",
+        "kind": 5,
+        "importPath": "api.stores.views",
+        "description": "api.stores.views",
+        "peekOfCode": "store_model = store_namespace.model('store', {\n    'store_id': fields.Integer(description='The unique identifier of a store'),\n    'store_name': fields.String(description='The name of the store'),\n    'location': fields.String(description='The location address of the store'),\n})\n@store_namespace.route(\"/\")\nclass StoreList(Resource):\n    # @store_namespace.marshal_list_with(store_model)\n    def get(self):\n        \"get all stores available\"",
+        "detail": "api.stores.views",
+        "documentation": {}
+    },
+    {
+        "label": "SuppliersList",
+        "kind": 6,
+        "importPath": "api.suppliers.app",
+        "description": "api.suppliers.app",
+        "peekOfCode": "class SuppliersList(Resource):\n    def get(self):\n        try:\n            suppliers = Suppliers.query.all()\n            if suppliers:\n                return {'suppliers': [marshal(supplier, supplier_model) for supplier in suppliers]}, HTTPStatus.OK\n            else:\n                return {\"message\": \"No suppliers found\"}, HTTPStatus.OK\n        except Exception as e:\n            print(f\"Error: {e}\")",
+        "detail": "api.suppliers.app",
+        "documentation": {}
+    },
+    {
+        "label": "MutateSupplier",
+        "kind": 6,
+        "importPath": "api.suppliers.app",
+        "description": "api.suppliers.app",
+        "peekOfCode": "class MutateSupplier(Resource):\n    def get(self, id):\n        try:\n            supplier = Suppliers.query.get(id)\n            if not supplier:\n                return {\"message\": f\"Supplier with id '{id}' doesn't exist.\"}, HTTPStatus.NOT_FOUND\n            return marshal(supplier, supplier_model), HTTPStatus.OK\n        except Exception as e:\n            print(f\"Error: {e}\")\n            return {\"error\": \"Bad request\"}, HTTPStatus.BAD_REQUEST",
+        "detail": "api.suppliers.app",
+        "documentation": {}
+    },
+    {
+        "label": "suppliers_namespace",
+        "kind": 5,
+        "importPath": "api.suppliers.app",
+        "description": "api.suppliers.app",
+        "peekOfCode": "suppliers_namespace = Namespace(\"suppliers\", \"Suppliers endpoints\")\nsupplier_model = suppliers_namespace.model('supplier', {\n    'supplier_id': fields.Integer(description='The unique identifier of a supplier'),\n    'supply_name': fields.String(description='The name of the supplier'),\n    'supplier_contact': fields.String(description='The contact information of the supplier'),\n    'supplier_email': fields.String(description='The email address of the supplier'),\n    'supplier_address': fields.String(description='The address of the supplier'),\n    'product_id': fields.Integer(description='The product supplied by the supplier'),\n    'store_id': fields.Integer(description='The store associated with the supplier'),\n})",
+        "detail": "api.suppliers.app",
+        "documentation": {}
+    },
+    {
+        "label": "supplier_model",
+        "kind": 5,
+        "importPath": "api.suppliers.app",
+        "description": "api.suppliers.app",
+        "peekOfCode": "supplier_model = suppliers_namespace.model('supplier', {\n    'supplier_id': fields.Integer(description='The unique identifier of a supplier'),\n    'supply_name': fields.String(description='The name of the supplier'),\n    'supplier_contact': fields.String(description='The contact information of the supplier'),\n    'supplier_email': fields.String(description='The email address of the supplier'),\n    'supplier_address': fields.String(description='The address of the supplier'),\n    'product_id': fields.Integer(description='The product supplied by the supplier'),\n    'store_id': fields.Integer(description='The store associated with the supplier'),\n})\nsupplier_parser = reqparse.RequestParser()",
+        "detail": "api.suppliers.app",
+        "documentation": {}
+    },
+    {
+        "label": "supplier_parser",
+        "kind": 5,
+        "importPath": "api.suppliers.app",
+        "description": "api.suppliers.app",
+        "peekOfCode": "supplier_parser = reqparse.RequestParser()\nsupplier_parser.add_argument('supply_name', type=str, required=True, help='Name of the supplier')\nsupplier_parser.add_argument('supplier_contact', type=str, required=True, help='Contact information of the supplier')\nsupplier_parser.add_argument('supplier_email', type=str, required=True, help='Email address of the supplier')\nsupplier_parser.add_argument('supplier_address', type=str, required=True, help='Address of the supplier')\nsupplier_parser.add_argument('product_id', type=int, required=True, help='Product supplied by the supplier')\nsupplier_parser.add_argument('store_id', type=int, required=True, help='Store associated with the supplier')\n@suppliers_namespace.route(\"/\")\nclass SuppliersList(Resource):\n    def get(self):",
+        "detail": "api.suppliers.app",
+        "documentation": {}
+    },
+    {
+        "label": "GetMerchantsResource",
+        "kind": 6,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "class GetMerchantsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        merchants = User.query.filter_by(role='merchant').all()\n        return merchants\n    @get_users_namespace.expect(user_parser)\n    @get_users_namespace.marshal_with(user_model)\n    def post(self):\n        args = user_parser.parse_args()\n        new_merchant = User(",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "GetAdminsResource",
+        "kind": 6,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "class GetAdminsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        admins = User.query.filter_by(role='admin').all()\n        return admins\n    @get_users_namespace.expect(user_parser)\n    @get_users_namespace.marshal_with(user_model)\n    def post(self):\n        args = user_parser.parse_args()\n        new_admin = User(",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "GetClerksResource",
+        "kind": 6,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "class GetClerksResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        clerks = User.query.filter_by(role='clerk').all()\n        return clerks\n    @get_users_namespace.expect(user_parser)\n    @get_users_namespace.marshal_with(user_model)\n    def post(self):\n        args = user_parser.parse_args()\n        new_clerk = User(",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "api",
+        "kind": 5,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "api = Api()\nget_users_namespace = Namespace('users', description='users endpoints')\nuser_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "get_users_namespace",
+        "kind": 5,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "get_users_namespace = Namespace('users', description='users endpoints')\nuser_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nuser_parser = reqparse.RequestParser()",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "user_model",
+        "kind": 5,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "user_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nuser_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')",
+        "detail": "api.Users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "user_parser",
+        "kind": 5,
+        "importPath": "api.Users.getusersapi",
+        "description": "api.Users.getusersapi",
+        "peekOfCode": "user_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')\nuser_parser.add_argument('password', type=str, required=True, help='Password of the clerk')\nuser_parser.add_argument('email', type=str, required=True, help='Email of the clerk')\nuser_parser.add_argument('full_name', type=str, required=True, help='Full name of the clerk')\nuser_parser.add_argument('store_id', type=int, required=True, help='Store ID of the clerk')\n@get_users_namespace.route('/merchants')\nclass GetMerchantsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):",
+        "detail": "api.Users.getusersapi",
         "documentation": {}
     },
     {

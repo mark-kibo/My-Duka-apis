@@ -1,15 +1,17 @@
 # Import necessary modules
 # from flask_sqlalchemy import SQLAlchemy
+import werkzeug.security
 from ..utils import db
 from flask_restx import Api, fields, Resource, Namespace,reqparse
-from api.models.users import User 
+from ..models.users import User 
+from flask_bcrypt import check_password_hash
 
 
 api = Api()
 
-# db = SQLAlchemy()
 
-user_model = api.model('User', {
+get_users_namespace = Namespace('users', description='users endpoints')
+user_model = get_users_namespace.model('User', {
     'username': fields.String(description='Username'),
     'password': fields.String(required=True, description='Password'),
     'email': fields.String(description='Email'),
@@ -18,7 +20,7 @@ user_model = api.model('User', {
     'store_id': fields.Integer(description='Store ID')
 })
 
-get_users_namespace = Namespace('users', description='users endpoints')
+
 
 
 user_parser = reqparse.RequestParser()
