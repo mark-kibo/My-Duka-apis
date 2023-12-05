@@ -52,8 +52,8 @@ class GetMerchantsResource(Resource):
         db.session.commit()
         return new_merchant, 201
 
-    @get_users_namespace.route('/merchants/<int:merchant_id>')
-    class MerchantResource(Resource):
+@get_users_namespace.route('/merchants/<int:merchant_id>')
+class MerchantResource(Resource):
         @get_users_namespace.marshal_with(user_model)
         def get(self, merchant_id):
             merchant = User.query.get(merchant_id)
@@ -101,8 +101,8 @@ class GetAdminsResource(Resource):
         db.session.commit()
         return new_admin, 201
 
-    @get_users_namespace.route('/admins/<int:admin_id>')
-    class AdminResource(Resource):
+@get_users_namespace.route('/admins/<int:admin_id>')
+class AdminResource(Resource):
         @get_users_namespace.marshal_with(user_model)
         def get(self, admin_id):
             admin = User.query.get(admin_id)
@@ -150,8 +150,8 @@ class GetClerksResource(Resource):
         db.session.commit()
         return new_clerk, 201
 
-    @get_users_namespace.route('/clerks/<int:clerk_id>')
-    class ClerkResource(Resource):
+@get_users_namespace.route('/clerks/<int:clerk_id>')
+class ClerkResource(Resource):
         @get_users_namespace.marshal_with(user_model)
         def get(self, clerk_id):
             clerk = User.query.get(clerk_id)

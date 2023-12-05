@@ -1,11 +1,13 @@
 from itsdangerous import URLSafeTimedSerializer
 from flask_restx import Namespace, Resource, fields, marshal_with
+from flask_jwt_extended import get_jwt_identity, jwt_required
 from flask import request, url_for, redirect
 from http import HTTPStatus
 from flask_mail import Message
 from ..utils import mail
+from ..models.users import User
 
-# initialize tokenize email - takes a secret key
+
 s= URLSafeTimedSerializer("myduka")
 
 email_namespace=Namespace("email", "get tokenized email")
@@ -22,28 +24,41 @@ getmail_model=email_namespace.model(
     }
 )
 
+def get_current_user():
+    jwt_required()  
+    user_id = get_jwt_identity()
+
+    return User.query.get(user_id)
+
+
 @email_namespace.route("/email")
 class TokenizeEmail(Resource):
+    @jwt_required() 
     @email_namespace.expect(getmail_model)
     def post(self):
         data = request.get_json()
-        print(data.get("email"))
-        
-        # create the token
-        token = s.dumps(data.get("email"), salt="email-confirm")
-        
-        # create email message
-        msg=Message("email", sender="kibochamark@gmail.com" ,  recipients=[data.get("email")])
+        user_email = data.get("email")
 
-        print(msg)
-        link = '<a href="http://127.0.0.1:5000/custom-url">Click here</a>'
         
-        msg.body = "Your link is {}".format(link)
-        
-        mail.send(msg)
-        
-        return token, HTTPStatus.OK
-    
+        current_user = get_current_user()
+        # msg = Message("email", sender=current_user.email, recipients=[user_email])
+
+
+        if current_user and current_user.role == 'merchant':
+            
+            token = s.dumps(user_email, salt="email-confirm")
+
+           
+            msg = Message("email", sender="chepmercy21@gmail.com", recipients=[user_email])
+
+            link = '<a href="http://127.0.0.1:5000/custom-url">Click here</a>'
+            msg.body = "Your link is {}".format(link)
+
+            mail.send(msg)
+
+            return token, HTTPStatus.OK
+        else:
+            return {"error": "Unauthorized"}, HTTPStatus.UNAUTHORIZED    
     
 @email_namespace.route("/email/<token>")
 class ConfirmTokenizeEmail(Resource):
