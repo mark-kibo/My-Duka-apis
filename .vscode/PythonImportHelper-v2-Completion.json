@@ -793,7 +793,7 @@
         "kind": 6,
         "importPath": "api.config.config",
         "description": "api.config.config",
-        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    # SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo@localhost/mydukka'\n    SQLALCHEMY_DATABASE_URI=config(\"DATABASE_URI\")\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,",
+        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    # SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo2001.@localhost/mydukka'\n    SQLALCHEMY_DATABASE_URI=config(\"DATABASE_URI\")\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,",
         "detail": "api.config.config",
         "documentation": {}
     },

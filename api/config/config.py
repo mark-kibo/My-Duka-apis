@@ -33,7 +33,7 @@ class Config:
 class DevConfig(Config):
     DEBUG=config("DEBUG", cast=bool)
     # SQLALCHEMY_ECHO=True
-    # SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo@localhost/mydukka'
+    # SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo2001.@localhost/mydukka'
     SQLALCHEMY_DATABASE_URI=config("DATABASE_URI")
     
     # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'
