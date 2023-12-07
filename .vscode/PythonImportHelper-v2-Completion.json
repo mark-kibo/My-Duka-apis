@@ -321,6 +321,46 @@
         "documentation": {}
     },
     {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "reqparse",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
         "label": "Api",
         "importPath": "flask_restx",
         "description": "flask_restx",
@@ -433,11 +473,27 @@
         "documentation": {}
     },
     {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
         "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
         "documentation": {}
     },
     {
@@ -1134,6 +1190,51 @@
         "description": "api.suppliers.app",
         "peekOfCode": "supplier_parser = reqparse.RequestParser()\nsupplier_parser.add_argument('supply_name', type=str, required=True, help='Name of the supplier')\nsupplier_parser.add_argument('supplier_contact', type=str, required=True, help='Contact information of the supplier')\nsupplier_parser.add_argument('supplier_email', type=str, required=True, help='Email address of the supplier')\nsupplier_parser.add_argument('supplier_address', type=str, required=True, help='Address of the supplier')\nsupplier_parser.add_argument('product_id', type=int, required=True, help='Product supplied by the supplier')\nsupplier_parser.add_argument('store_id', type=int, required=True, help='Store associated with the supplier')\n@suppliers_namespace.route(\"/\")\nclass SuppliersList(Resource):\n    def get(self):",
         "detail": "api.suppliers.app",
+        "documentation": {}
+    },
+    {
+        "label": "SupplyRequestList",
+        "kind": 6,
+        "importPath": "api.supplyrequests.app",
+        "description": "api.supplyrequests.app",
+        "peekOfCode": "class SupplyRequestList(Resource):\n    @supply_requests_namespace.marshal_list_with(supply_request_model)\n    def get(self):\n        \"\"\"Get all supply requests\"\"\"\n        try:\n            supply_requests = SupplyRequests.query.all()\n            return marshal(supply_requests, supply_request_model), HTTPStatus.OK\n        except Exception as e:\n            return {\"error\": \"Internal Server Error\"}, HTTPStatus.INTERNAL_SERVER_ERROR\n    @supply_requests_namespace.expect(supply_request_model)",
+        "detail": "api.supplyrequests.app",
+        "documentation": {}
+    },
+    {
+        "label": "SupplyRequest",
+        "kind": 6,
+        "importPath": "api.supplyrequests.app",
+        "description": "api.supplyrequests.app",
+        "peekOfCode": "class SupplyRequest(Resource):\n    @supply_requests_namespace.marshal_with(supply_request_model)\n    def get(self, request_id):\n        \"\"\"Get details of a specific supply request by its ID\"\"\"\n        try:\n            supply_request = SupplyRequests.query.get_or_404(request_id)\n            return marshal(supply_request, supply_request_model), HTTPStatus.OK\n        except Exception as e:\n            return {\"error\": \"Not Found\"}, HTTPStatus.NOT_FOUND\n    @supply_requests_namespace.expect(supply_request_model)",
+        "detail": "api.supplyrequests.app",
+        "documentation": {}
+    },
+    {
+        "label": "supply_requests_namespace",
+        "kind": 5,
+        "importPath": "api.supplyrequests.app",
+        "description": "api.supplyrequests.app",
+        "peekOfCode": "supply_requests_namespace = Namespace(\"supply_requests\", \"Supply Requests Endpoints\")\n# Define the model for serialization\nsupply_request_model = supply_requests_namespace.model('SupplyRequest', {\n    'request_id': fields.Integer(description='The unique identifier of a supply request'),\n    'clerk_id': fields.Integer(description='Clerk ID'),\n    'product_id': fields.Integer(description='Product ID'),\n    'quantity_requested': fields.Integer(description='Quantity Requested'),\n    'reason_for_request': fields.String(description='Reason for Request'),\n    'received_items': fields.Integer(description='Received Items'),\n    'received': fields.Boolean(description='Received Status'),",
+        "detail": "api.supplyrequests.app",
+        "documentation": {}
+    },
+    {
+        "label": "supply_request_model",
+        "kind": 5,
+        "importPath": "api.supplyrequests.app",
+        "description": "api.supplyrequests.app",
+        "peekOfCode": "supply_request_model = supply_requests_namespace.model('SupplyRequest', {\n    'request_id': fields.Integer(description='The unique identifier of a supply request'),\n    'clerk_id': fields.Integer(description='Clerk ID'),\n    'product_id': fields.Integer(description='Product ID'),\n    'quantity_requested': fields.Integer(description='Quantity Requested'),\n    'reason_for_request': fields.String(description='Reason for Request'),\n    'received_items': fields.Integer(description='Received Items'),\n    'received': fields.Boolean(description='Received Status'),\n    'approved': fields.Boolean(description='Approval Status'),\n})",
+        "detail": "api.supplyrequests.app",
+        "documentation": {}
+    },
+    {
+        "label": "supply_request_parser",
+        "kind": 5,
+        "importPath": "api.supplyrequests.app",
+        "description": "api.supplyrequests.app",
+        "peekOfCode": "supply_request_parser = reqparse.RequestParser()\nsupply_request_parser.add_argument('clerk_id', type=int, required=True, help='Clerk ID is required')\nsupply_request_parser.add_argument('product_id', type=int, required=True, help='Product ID is required')\nsupply_request_parser.add_argument('quantity_requested', type=int, required=True, help='Quantity Requested is required')\nsupply_request_parser.add_argument('reason_for_request', type=str, required=True, help='Reason for Request is required')\n@supply_requests_namespace.route(\"/\")\nclass SupplyRequestList(Resource):\n    @supply_requests_namespace.marshal_list_with(supply_request_model)\n    def get(self):\n        \"\"\"Get all supply requests\"\"\"",
+        "detail": "api.supplyrequests.app",
         "documentation": {}
     },
     {
