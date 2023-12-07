@@ -22,7 +22,7 @@ from .signup.signupapi import signup_namespace
 
 from .users.getusersapi import get_users_namespace
 from .Receipt.receiptsapi import receipts_namespace
-from .products.productapi import products_namespace
+from .products.views import products_namespace
 from .suppliers.app import suppliers_namespace
 from .login.loginapi import login_namespace
 from .stores.views import store_namespace
@@ -37,6 +37,7 @@ from flask_bcrypt import Bcrypt
 
 def create_app():
     app=Flask(__name__)
+    CORS(app)
     app.config.from_object(config_dict['dev'])
     mail=Mail(app)
 
@@ -54,7 +55,7 @@ def create_app():
 
     
     jwt = JWTManager(app)
-    bycrypt = Bcrypt(app)
+    bcrypt = Bcrypt(app)
 
     migrate=Migrate(app, db)
 
