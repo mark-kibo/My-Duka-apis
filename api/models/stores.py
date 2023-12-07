@@ -1,5 +1,4 @@
 from ..utils import db
-from .products import Products
 from .association import store_product_association
 
 class Store(db.Model):
@@ -8,7 +7,6 @@ class Store(db.Model):
     store_id = db.Column(db.Integer(), primary_key=True)
     store_name=db.Column(db.String(255), nullable=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))
-    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))
     location = db.Column(db.String(255))
     
   # Relationship with the 'Products' table through the association table
@@ -32,4 +30,3 @@ class Store(db.Model):
 
 
   
-

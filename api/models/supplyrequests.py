@@ -11,3 +11,12 @@ class SupplyRequests(db.Model):
     received_items = db.Column(db.Integer())
     received = db.Column(db.Boolean())
     approved = db.Column(db.Boolean())
+
+
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def delete(self):
+        db.session.delete(self)
+        db.session.commit()
