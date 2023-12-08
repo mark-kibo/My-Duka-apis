@@ -31,7 +31,7 @@ from .users.getusersapi import get_users_namespace
 from .supplyrequests.app import supply_requests_namespace
 from .signup.signupapi import signup_namespace
 from .sales.views import sales_namespace
-from flask_bcrypt import Bcrypt
+
 # from .models.stores import Store
 
 
@@ -61,7 +61,7 @@ def create_app():
     
     jwt = JWTManager(app)
     # bycrypt = Bcrypt(app)
-    bcrypt = Bcrypt(app)
+
 
     migrate=Migrate(app, db)
 
