@@ -9,8 +9,7 @@ class Sales(db.Model):
     product_quantity = db.Column(db.Integer())
     store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))
     amount = db.Column(db.Integer())
-
-
+    
     def save(self):
         db.session.add(self)
         db.session.commit()

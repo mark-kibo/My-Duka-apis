@@ -29,6 +29,7 @@ class SuppliersList(Resource):
     def get(self):
         try:
             suppliers = Suppliers.query.all()
+            print(suppliers)
 
             if suppliers:
                 return {'suppliers': [marshal(supplier, supplier_model) for supplier in suppliers]}, HTTPStatus.OK

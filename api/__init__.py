@@ -27,8 +27,10 @@ from .suppliers.app import suppliers_namespace
 from .login.loginapi import login_namespace
 from .stores.views import store_namespace
 from .products.views import products_namespace
-from .Users.getusersapi import get_users_namespace
+from .users.getusersapi import get_users_namespace
 from .supplyrequests.app import supply_requests_namespace
+from .signup.signupapi import signup_namespace
+from .sales.views import sales_namespace
 from flask_bcrypt import Bcrypt
 # from .models.stores import Store
 
@@ -59,6 +61,7 @@ def create_app():
 
     
     jwt = JWTManager(app)
+    # bycrypt = Bcrypt(app)
     bcrypt = Bcrypt(app)
 
     migrate=Migrate(app, db)
@@ -72,20 +75,28 @@ def create_app():
         }
     }
     
-    api=Api(app, authorizations=authorizations)
+    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers")
         
     api.add_namespace(email_namespace)
     api.add_namespace(signup_namespace) 
     # api blueprints - used for documentation
- 
-    api.add_namespace(suppliers_namespace)
+  
+    api.add_namespace(signup_namespace)
     api.add_namespace(login_namespace)
+    api.add_namespace(email_namespace)
     api.add_namespace(store_namespace)
     
     api.add_namespace(products_namespace)
     api.add_namespace(store_namespace)
     api.add_namespace(get_users_namespace)
+    api.add_namespace(store_namespace)
+    api.add_namespace(products_namespace)
+    api.add_namespace(sales_namespace) 
+    api.add_namespace(suppliers_namespace)
     api.add_namespace(supply_requests_namespace)
+    
+   
+   
     
     
    

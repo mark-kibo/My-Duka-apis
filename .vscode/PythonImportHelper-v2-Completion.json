@@ -209,6 +209,38 @@
         "documentation": {}
     },
     {
+        "label": "Namespace",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "Resource",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
         "label": "Api",
         "importPath": "flask_restx",
         "description": "flask_restx",
@@ -370,6 +402,14 @@
     },
     {
         "label": "fields",
+        "importPath": "flask_restx",
+        "description": "flask_restx",
+        "isExtraImport": true,
+        "detail": "flask_restx",
+        "documentation": {}
+    },
+    {
+        "label": "marshal",
         "importPath": "flask_restx",
         "description": "flask_restx",
         "isExtraImport": true,
@@ -441,6 +481,14 @@
         "documentation": {}
     },
     {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -486,6 +534,22 @@
         "description": "flask",
         "isExtraImport": true,
         "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPStatus",
+        "importPath": "http",
+        "description": "http",
+        "isExtraImport": true,
+        "detail": "http",
         "documentation": {}
     },
     {
@@ -578,6 +642,22 @@
         "documentation": {}
     },
     {
+        "label": "generate_password_hash",
+        "importPath": "werkzeug.security",
+        "description": "werkzeug.security",
+        "isExtraImport": true,
+        "detail": "werkzeug.security",
+        "documentation": {}
+    },
+    {
+        "label": "Faker",
+        "importPath": "faker",
+        "description": "faker",
+        "isExtraImport": true,
+        "detail": "faker",
+        "documentation": {}
+    },
+    {
         "label": "Faker",
         "importPath": "faker",
         "description": "faker",
@@ -595,6 +675,14 @@
     },
     {
         "label": "create_app",
+        "importPath": "runserver",
+        "description": "runserver",
+        "isExtraImport": true,
+        "detail": "runserver",
+        "documentation": {}
+    },
+    {
+        "label": "app",
         "importPath": "runserver",
         "description": "runserver",
         "isExtraImport": true,
@@ -634,43 +722,19 @@
         "documentation": {}
     },
     {
-        "label": "generate_password_hash",
-        "importPath": "flask_bcrypt",
-        "description": "flask_bcrypt",
-        "isExtraImport": true,
-        "detail": "flask_bcrypt",
-        "documentation": {}
-    },
-    {
-        "label": "check_password_hash",
-        "importPath": "flask_bcrypt",
-        "description": "flask_bcrypt",
-        "isExtraImport": true,
-        "detail": "flask_bcrypt",
-        "documentation": {}
-    },
-    {
-        "label": "check_password_hash",
-        "importPath": "flask_bcrypt",
-        "description": "flask_bcrypt",
-        "isExtraImport": true,
-        "detail": "flask_bcrypt",
-        "documentation": {}
-    },
-    {
-        "label": "BadRequest",
-        "importPath": "werkzeug.exceptions",
-        "description": "werkzeug.exceptions",
-        "isExtraImport": true,
-        "detail": "werkzeug.exceptions",
-        "documentation": {}
-    },
-    {
         "label": "User",
         "importPath": "api.models.users",
         "description": "api.models.users",
         "isExtraImport": true,
         "detail": "api.models.users",
+        "documentation": {}
+    },
+    {
+        "label": "check_password_hash",
+        "importPath": "flask_bcrypt",
+        "description": "flask_bcrypt",
+        "isExtraImport": true,
+        "detail": "flask_bcrypt",
         "documentation": {}
     },
     {
@@ -729,7 +793,7 @@
         "kind": 6,
         "importPath": "api.config.config",
         "description": "api.config.config",
-        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo@localhost/mydukka'\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,\n    'prod': ProductionConfig",
+        "peekOfCode": "class DevConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\n    # SQLALCHEMY_ECHO=True\n    # SQLALCHEMY_DATABASE_URI='postgresql://postgres:kibo2001.@localhost/mydukka'\n    SQLALCHEMY_DATABASE_URI=config(\"DATABASE_URI\")\n    # SQLALCHEMY_DATABASE_URI='postgresql://hasura_role_4ffbe699-bb05-4c14-a35a-9a1e37846e90:t2vwMVXebif7@broad-breeze-12060553.us-east-2.aws.neon.tech:5432/sharp-eel-19_db_3935532'\nclass ProductionConfig(Config):\n    DEBUG=config(\"DEBUG\", cast=bool)\nconfig_dict={\n    'dev': DevConfig,",
         "detail": "api.config.config",
         "documentation": {}
     },
@@ -761,29 +825,11 @@
         "documentation": {}
     },
     {
-        "label": "MerchantLoginResource",
+        "label": "LoginResource",
         "kind": 6,
         "importPath": "api.login.loginapi",
         "description": "api.login.loginapi",
-        "peekOfCode": "class MerchantLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        merchant = User.query.filter_by(username=username, role='merchant').first()\n        if merchant and check_password_hash(merchant.password, password):\n            access_token = create_access_token(identity=merchant.user_id)\n            return {'message': 'Merchant login successful', 'access_token': access_token}\n        return {'message': 'Invalid credentials'}, 401",
-        "detail": "api.login.loginapi",
-        "documentation": {}
-    },
-    {
-        "label": "AdminLoginResource",
-        "kind": 6,
-        "importPath": "api.login.loginapi",
-        "description": "api.login.loginapi",
-        "peekOfCode": "class AdminLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        admin = User.query.filter_by(username=username, role='admin').first()\n        if admin and check_password_hash(admin.password, password):\n            access_token = create_access_token(identity=admin.user_id)\n            return {'message': 'Admin login successful', 'access_token': access_token}\n        return {'message': 'Invalid credentials'}, 401",
-        "detail": "api.login.loginapi",
-        "documentation": {}
-    },
-    {
-        "label": "ClerkLoginResource",
-        "kind": 6,
-        "importPath": "api.login.loginapi",
-        "description": "api.login.loginapi",
-        "peekOfCode": "class ClerkLoginResource(Resource):\n    def post(self):\n        login_parser = reqparse.RequestParser()\n        login_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\n        login_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        clerk = User.query.filter_by(username=username).first()\n        # user = User(username = \"mercy\", password=\"mercy#\")",
+        "peekOfCode": "class LoginResource(Resource):\n    @login_namespace.expect(login_model)\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        # Assuming you have a User model with 'username', 'user_id', and 'role' fields\n        user = User.query.filter_by(username=username).first()\n        if user and check_password_hash(user.password, password):\n            # You can customize the token to include additional information",
         "detail": "api.login.loginapi",
         "documentation": {}
     },
@@ -792,7 +838,7 @@
         "kind": 5,
         "importPath": "api.login.loginapi",
         "description": "api.login.loginapi",
-        "peekOfCode": "login_namespace = Namespace('login', description='login endpoints')\nlogin_parser = reqparse.RequestParser()\nlogin_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nlogin_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\n@login_namespace.route('/merchant')\nclass MerchantLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']",
+        "peekOfCode": "login_namespace = Namespace('login', description='login endpoints')\nlogin_parser = reqparse.RequestParser()\nlogin_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nlogin_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nlogin_model=login_namespace.model('Login', {\n    \"username\": fields.String(required=True),\n    \"password\": fields.String(required=True)\n})\n@login_namespace.route('/')\nclass LoginResource(Resource):",
         "detail": "api.login.loginapi",
         "documentation": {}
     },
@@ -801,7 +847,7 @@
         "kind": 5,
         "importPath": "api.login.loginapi",
         "description": "api.login.loginapi",
-        "peekOfCode": "login_parser = reqparse.RequestParser()\nlogin_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nlogin_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\n@login_namespace.route('/merchant')\nclass MerchantLoginResource(Resource):\n    def post(self):\n        data = login_parser.parse_args()\n        username = data['username']\n        password = data['password']\n        merchant = User.query.filter_by(username=username, role='merchant').first()",
+        "peekOfCode": "login_parser = reqparse.RequestParser()\nlogin_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nlogin_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nlogin_model=login_namespace.model('Login', {\n    \"username\": fields.String(required=True),\n    \"password\": fields.String(required=True)\n})\n@login_namespace.route('/')\nclass LoginResource(Resource):\n    @login_namespace.expect(login_model)",
         "detail": "api.login.loginapi",
         "documentation": {}
     },
@@ -837,7 +883,7 @@
         "kind": 6,
         "importPath": "api.models.sales",
         "description": "api.models.sales",
-        "peekOfCode": "class Sales(db.Model):\n    __tablename__ = 'sales'\n    sale_id = db.Column(db.Integer(), primary_key=True)\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    product_quantity = db.Column(db.Integer())\n    store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))\n    amount = db.Column(db.Integer())",
+        "peekOfCode": "class Sales(db.Model):\n    __tablename__ = 'sales'\n    sale_id = db.Column(db.Integer(), primary_key=True)\n    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))\n    product_quantity = db.Column(db.Integer())\n    store_id = db.Column(db.Integer(), db.ForeignKey('stores.store_id'))\n    amount = db.Column(db.Integer())\n    def save(self):\n        db.session.add(self)\n        db.session.commit()",
         "detail": "api.models.sales",
         "documentation": {}
     },
@@ -918,7 +964,7 @@
         "kind": 6,
         "importPath": "api.models.stores",
         "description": "api.models.stores",
-        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    store_name=db.Column(db.String(255), nullable=True)\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'))\n    location = db.Column(db.String(255))\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)",
+        "peekOfCode": "class Store(db.Model):\n    __tablename__ = 'stores'\n    store_id = db.Column(db.Integer(), primary_key=True)\n    store_name=db.Column(db.String(255), nullable=True)\n    location = db.Column(db.String(255))\n    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'), nullable=True)\n  # Relationship with the 'Products' table through the association table\n    products = db.relationship('Products', secondary=store_product_association, back_populates='stores')\n    supplier_id = db.Column(db.Integer(), db.ForeignKey('suppliers.supplier_id'), nullable=True)\n    def save(self):",
         "detail": "api.models.stores",
         "documentation": {}
     },
@@ -945,7 +991,7 @@
         "kind": 6,
         "importPath": "api.models.users",
         "description": "api.models.users",
-        "peekOfCode": "class User(db.Model):\n    __tablename__= \"users\"\n    user_id = db.Column(db.Integer(), primary_key=True)\n    username = db.Column(db.String(50), unique=True, nullable=False)\n    password = db.Column(db.String(255), nullable=False)\n    email = db.Column(db.String(100), unique=True, nullable=False)\n    full_name = db.Column(db.String(100), nullable=False)\n    role = db.Column(db.String(20), nullable=False)\n    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'), nullable=False)\n    # Define the foreign key relationship for the stores",
+        "peekOfCode": "class User(db.Model):\n    __tablename__= \"users\"\n    user_id = db.Column(db.Integer(), primary_key=True)\n    username = db.Column(db.String(50), unique=True, nullable=False)\n    password = db.Column(db.String(255), nullable=False)\n    email = db.Column(db.String(100), unique=True, nullable=False)\n    full_name = db.Column(db.String(100), nullable=False)\n    role = db.Column(db.String(20), nullable=False)\n    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'), nullable=True)\n    # Define the foreign key relationship for the stores",
         "detail": "api.models.users",
         "documentation": {}
     },
@@ -1058,6 +1104,60 @@
         "documentation": {}
     },
     {
+        "label": "CreateSaleResource",
+        "kind": 6,
+        "importPath": "api.sales.views",
+        "description": "api.sales.views",
+        "peekOfCode": "class CreateSaleResource(Resource):\n    @sales_namespace.expect(sale_model)\n    def post(self):\n        data = request.get_json()\n        product_id = data['product_id']\n        product_quantity = data['product_quantity']\n        store_id = data['store_id']\n        amount = data['amount']\n        # Check if the product exists and has enough quantity\n        # You need to implement this logic based on your application's structure",
+        "detail": "api.sales.views",
+        "documentation": {}
+    },
+    {
+        "label": "GetAllSalesResource",
+        "kind": 6,
+        "importPath": "api.sales.views",
+        "description": "api.sales.views",
+        "peekOfCode": "class GetAllSalesResource(Resource):\n    def get(self):\n        sales = Sales.query.all()\n        if not sales:\n            return {\"message\":\"no sales available\"}, HTTPStatus.OK\n        return marshal(sales, sale_model), HTTPStatus.OK\n# Resource for getting a sale by ID\n@sales_namespace.route('/get/<int:sale_id>')\nclass GetSaleByIdResource(Resource):\n    def get(self, sale_id):",
+        "detail": "api.sales.views",
+        "documentation": {}
+    },
+    {
+        "label": "GetSaleByIdResource",
+        "kind": 6,
+        "importPath": "api.sales.views",
+        "description": "api.sales.views",
+        "peekOfCode": "class GetSaleByIdResource(Resource):\n    def get(self, sale_id):\n        sale = Sales.query.get(sale_id=sale_id)\n        if sale:\n            return marshal(sale, sale_model), HTTPStatus.OK\n        return {'message': 'Sale not found'}, HTTPStatus.NOT_FOUND\n# Resource for updating a sale by ID (patch)\n@sales_namespace.route('/patch/<int:sale_id>')\nclass PatchSaleResource(Resource):\n    @sales_namespace.expect(sale_model)",
+        "detail": "api.sales.views",
+        "documentation": {}
+    },
+    {
+        "label": "PatchSaleResource",
+        "kind": 6,
+        "importPath": "api.sales.views",
+        "description": "api.sales.views",
+        "peekOfCode": "class PatchSaleResource(Resource):\n    @sales_namespace.expect(sale_model)\n    def patch(self, sale_id):\n        sale = Sales.query.get(sale_id=sale_id)\n        if not sale:\n            return {'message': 'Sale not found'}, HTTPStatus.NOT_FOUND\n        data = request.get_json()\n        product_quantity = data['product_quantity']\n        store_id = data['store_id']\n        amount = data['amount']",
+        "detail": "api.sales.views",
+        "documentation": {}
+    },
+    {
+        "label": "DeleteSaleResource",
+        "kind": 6,
+        "importPath": "api.sales.views",
+        "description": "api.sales.views",
+        "peekOfCode": "class DeleteSaleResource(Resource):\n    def delete(self, sale_id):\n        sale = Sales.query.get(sale_id=sale_id)\n        if sale:\n            # Increase the product quantity\n            product = Products.query.get(product_id=sale.product_id)\n            product.quantity += sale.product_quantity\n            # Delete the sale\n            sale.delete()\n            return {'message': 'Sale deleted successfully'}, HTTPStatus.NO_CONTENT",
+        "detail": "api.sales.views",
+        "documentation": {}
+    },
+    {
+        "label": "sale_model",
+        "kind": 5,
+        "importPath": "api.sales.views",
+        "description": "api.sales.views",
+        "peekOfCode": "sale_model = sales_namespace.model('Sale', {\n    'product_id': fields.Integer(required=True, description='Product ID'),\n    'product_quantity': fields.Integer(required=True, description='Product Quantity'),\n    'store_id': fields.Integer(required=True, description='Store ID'),\n    'amount': fields.Integer(required=True, description='Amount'),\n})\n# Resource for creating a new sale\n@sales_namespace.route('/create')\nclass CreateSaleResource(Resource):\n    @sales_namespace.expect(sale_model)",
+        "detail": "api.sales.views",
+        "documentation": {}
+    },
+    {
         "label": "SignupResource",
         "kind": 6,
         "importPath": "api.signup.signupapi",
@@ -1071,7 +1171,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "api = Api()\nsignup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']",
+        "peekOfCode": "api = Api()\nsignup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1080,7 +1180,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "signup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {",
+        "peekOfCode": "signup_namespace = Namespace('signup', description='signup endpoints')\nsignup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1089,7 +1189,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "signup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=True, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),",
+        "peekOfCode": "signup_parser = reqparse.RequestParser()\nsignup_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')\nsignup_parser.add_argument('password', type=str, required=True, help='Password cannot be blank')\nsignup_parser.add_argument('email', type=str, required=True, help='Email cannot be blank')\nsignup_parser.add_argument('full_name', type=str, required=True, help='Full Name cannot be blank')\nsignup_parser.add_argument('role', type=str, required=True, help='Role cannot be blank')\nsignup_parser.add_argument('store_id', type=int, required=False, help='Store ID cannot be blank')\nROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1098,7 +1198,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "ROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES),\n    'store_id': fields.Integer(required=True, description='Store ID')\n})\n@signup_namespace.route('/')",
+        "peekOfCode": "ROLES = ['merchant', 'admin', 'clerk']\nsignup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES)\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1107,7 +1207,7 @@
         "kind": 5,
         "importPath": "api.signup.signupapi",
         "description": "api.signup.signupapi",
-        "peekOfCode": "signup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES),\n    'store_id': fields.Integer(required=True, description='Store ID')\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):",
+        "peekOfCode": "signup_model = signup_namespace.model('User', {\n    'username': fields.String(required=True, description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(required=True, description='Email'),\n    'full_name': fields.String(required=True, description='Full Name'),\n    'role': fields.String(required=True, description='Role', enum=ROLES)\n})\n@signup_namespace.route('/')\nclass SignupResource(Resource):\n    @api.doc(responses={201: 'User registered successfully', 400: 'Invalid store_id or role', 409: 'Username or email already exists'})",
         "detail": "api.signup.signupapi",
         "documentation": {}
     },
@@ -1143,7 +1243,7 @@
         "kind": 5,
         "importPath": "api.stores.views",
         "description": "api.stores.views",
-        "peekOfCode": "store_model = store_namespace.model('store', {\n    'store_id': fields.Integer(description='The unique identifier of a store'),\n    'store_name': fields.String(description='The name of the store'),\n    'location': fields.String(description='The location address of the store'),\n})\n@store_namespace.route(\"/\")\nclass StoreList(Resource):\n    # @store_namespace.marshal_list_with(store_model)\n    def get(self):\n        \"get all stores available\"",
+        "peekOfCode": "store_model = store_namespace.model('store', {\n    'store_id': fields.Integer(description='The unique identifier of a store'),\n    'store_name': fields.String(description='The name of the store'),\n    'location': fields.String(description='The location address of the store'),\n    'user_id': fields.Integer(description='The owner of the store'),\n})\n@store_namespace.route(\"/\")\nclass StoreList(Resource):\n    # @store_namespace.marshal_list_with(store_model)\n    def get(self):",
         "detail": "api.stores.views",
         "documentation": {}
     },
@@ -1152,7 +1252,7 @@
         "kind": 6,
         "importPath": "api.suppliers.app",
         "description": "api.suppliers.app",
-        "peekOfCode": "class SuppliersList(Resource):\n    def get(self):\n        try:\n            suppliers = Suppliers.query.all()\n            if suppliers:\n                return {'suppliers': [marshal(supplier, supplier_model) for supplier in suppliers]}, HTTPStatus.OK\n            else:\n                return {\"message\": \"No suppliers found\"}, HTTPStatus.OK\n        except Exception as e:\n            print(f\"Error: {e}\")",
+        "peekOfCode": "class SuppliersList(Resource):\n    def get(self):\n        try:\n            suppliers = Suppliers.query.all()\n            print(suppliers)\n            if suppliers:\n                return {'suppliers': [marshal(supplier, supplier_model) for supplier in suppliers]}, HTTPStatus.OK\n            else:\n                return {\"message\": \"No suppliers found\"}, HTTPStatus.OK\n        except Exception as e:",
         "detail": "api.suppliers.app",
         "documentation": {}
     },
@@ -1240,64 +1340,73 @@
     {
         "label": "GetMerchantsResource",
         "kind": 6,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
-        "peekOfCode": "class GetMerchantsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        merchants = User.query.filter_by(role='merchant').all()\n        return merchants\n    @get_users_namespace.expect(user_parser)\n    @get_users_namespace.marshal_with(user_model)\n    def post(self):\n        args = user_parser.parse_args()\n        new_merchant = User(",
-        "detail": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
+        "peekOfCode": "class GetMerchantsResource(Resource):\n    # @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        merchants = User.query.filter_by(role='merchant').all()\n        if not merchants:\n            return {\"message\": \"No clerks registered\"}, HTTPStatus.NOT_FOUND\n        return marshal(merchants, user_model), HTTPStatus.OK\n    @get_users_namespace.expect(user_parser)\n    def post(self):\n        try:",
+        "detail": "api.users.getusersapi",
         "documentation": {}
     },
     {
         "label": "GetAdminsResource",
         "kind": 6,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
-        "peekOfCode": "class GetAdminsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        admins = User.query.filter_by(role='admin').all()\n        return admins\n    @get_users_namespace.expect(user_parser)\n    @get_users_namespace.marshal_with(user_model)\n    def post(self):\n        args = user_parser.parse_args()\n        new_admin = User(",
-        "detail": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
+        "peekOfCode": "class GetAdminsResource(Resource):\n    def get(self):\n        admins = User.query.filter_by(role='admin').all() \n        if not admins:\n                    return {\"message\": \"no admins exists\"}, HTTPStatus.NOT_FOUND\n        return marshal(admins, user_model), 200\n    @get_users_namespace.expect(user_parser)\n    def post(self):\n        try:\n            args = user_parser.parse_args()",
+        "detail": "api.users.getusersapi",
         "documentation": {}
     },
     {
         "label": "GetClerksResource",
         "kind": 6,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
-        "peekOfCode": "class GetClerksResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):\n        clerks = User.query.filter_by(role='clerk').all()\n        return clerks\n    @get_users_namespace.expect(user_parser)\n    @get_users_namespace.marshal_with(user_model)\n    def post(self):\n        args = user_parser.parse_args()\n        new_clerk = User(",
-        "detail": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
+        "peekOfCode": "class GetClerksResource(Resource):\n    def get(self):\n        clerks = User.query.filter_by(role='clerk').all()\n        if not clerks:\n            return {\"message\":\"no clerks found \"}, 404\n        return marshal(clerks, user_model)\n    @get_users_namespace.expect(user_parser)\n    def post(self):\n        try:\n            args = user_parser.parse_args()",
+        "detail": "api.users.getusersapi",
         "documentation": {}
     },
     {
         "label": "api",
         "kind": 5,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
         "peekOfCode": "api = Api()\nget_users_namespace = Namespace('users', description='users endpoints')\nuser_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})",
-        "detail": "api.Users.getusersapi",
+        "detail": "api.users.getusersapi",
         "documentation": {}
     },
     {
         "label": "get_users_namespace",
         "kind": 5,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
         "peekOfCode": "get_users_namespace = Namespace('users', description='users endpoints')\nuser_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nuser_parser = reqparse.RequestParser()",
-        "detail": "api.Users.getusersapi",
+        "detail": "api.users.getusersapi",
         "documentation": {}
     },
     {
         "label": "user_model",
         "kind": 5,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
         "peekOfCode": "user_model = get_users_namespace.model('User', {\n    'username': fields.String(description='Username'),\n    'password': fields.String(required=True, description='Password'),\n    'email': fields.String(description='Email'),\n    'full_name': fields.String(description='Full Name'),\n    'role': fields.String(description='Role'),\n    'store_id': fields.Integer(description='Store ID')\n})\nuser_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')",
-        "detail": "api.Users.getusersapi",
+        "detail": "api.users.getusersapi",
         "documentation": {}
     },
     {
         "label": "user_parser",
         "kind": 5,
-        "importPath": "api.Users.getusersapi",
-        "description": "api.Users.getusersapi",
-        "peekOfCode": "user_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')\nuser_parser.add_argument('password', type=str, required=True, help='Password of the clerk')\nuser_parser.add_argument('email', type=str, required=True, help='Email of the clerk')\nuser_parser.add_argument('full_name', type=str, required=True, help='Full name of the clerk')\nuser_parser.add_argument('store_id', type=int, required=True, help='Store ID of the clerk')\n@get_users_namespace.route('/merchants')\nclass GetMerchantsResource(Resource):\n    @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):",
-        "detail": "api.Users.getusersapi",
+        "importPath": "api.users.getusersapi",
+        "description": "api.users.getusersapi",
+        "peekOfCode": "user_parser = reqparse.RequestParser()\nuser_parser.add_argument('username', type=str, required=True, help='Username of the clerk')\nuser_parser.add_argument('password', type=str, required=True, help='Password of the clerk')\nuser_parser.add_argument('email', type=str, required=True, help='Email of the clerk')\nuser_parser.add_argument('full_name', type=str, required=True, help='Full name of the clerk')\nuser_parser.add_argument('store_id', type=int, required=True, help='Store ID of the clerk')\n@get_users_namespace.route('/merchants')\nclass GetMerchantsResource(Resource):\n    # @get_users_namespace.marshal_with(user_model, as_list=True)\n    def get(self):",
+        "detail": "api.users.getusersapi",
+        "documentation": {}
+    },
+    {
+        "label": "fake",
+        "kind": 5,
+        "importPath": "api.create_data",
+        "description": "api.create_data",
+        "peekOfCode": "fake = Faker()\nwith app.app_context():\n    def generate_fake_data():\n        # Create a SQLAlchemy database connection\n        db.create_all()\n        # Generate fake users\n        users = []\n        for _ in range(2):\n            user = User(\n                username=fake.user_name(),",
+        "detail": "api.create_data",
         "documentation": {}
     },
     {
@@ -1386,7 +1495,7 @@
         "kind": 5,
         "importPath": "runserver",
         "description": "runserver",
-        "peekOfCode": "app = create_app()\nCORS(app, resources={r\"/api/*\": {\"origins\": \"http://127.0.0.1:5000\"}})\napp.run()",
+        "peekOfCode": "app = create_app()\nCORS(app, resources={r\"/api/*\": {\"origins\": \"*\"}})\n# app.run()",
         "detail": "runserver",
         "documentation": {}
     }

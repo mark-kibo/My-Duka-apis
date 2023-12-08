@@ -20,7 +20,11 @@ class Products(db.Model):
 
     receipts = db.relationship('Receipts', backref='product', lazy=True)
     supply_requests = db.relationship('SupplyRequests', backref='product', lazy=True)
-    stores = db.relationship('Store', back_populates='products_association', lazy=True)
+    # supplier = db.relationship('Suppliers', back_populates='product', lazy=True)
+    # supplier = db.relationship('Suppliers', back_populates='product', lazy=True, foreign_keys=[supplier_id])
+    supplier = db.relationship('Suppliers', foreign_keys=[supplier_id])
+
+    sales = db.relationship('Sales', backref='product', cascade='all, delete-orphan')
 
     # Relationship with the 'Store' table through the association table
     stores = db.relationship('Store', secondary=store_product_association, back_populates='products')
