@@ -33,7 +33,7 @@ def get_current_user():
 
 @email_namespace.route("/email")
 class TokenizeEmail(Resource):
-    @jwt_required() 
+
     @email_namespace.expect(getmail_model)
     def post(self):
         data = request.get_json()
@@ -51,8 +51,8 @@ class TokenizeEmail(Resource):
            
             msg = Message("email", sender="chepmercy21@gmail.com", recipients=[user_email])
 
-            link = '<a href="http://127.0.0.1:5000/custom-url">Click here</a>'
-            msg.body = "Your link is {}".format(link)
+            link = f'https://my-duka-front-kup405jo7-mark-kibo.vercel.app/signup/{token}'
+            msg.body = "copy this link to your browser is {}".format(link)
 
             mail.send(msg)
 
