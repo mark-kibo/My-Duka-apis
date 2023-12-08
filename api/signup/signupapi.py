@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 # from flask_bcrypt import generate_password_hash, check_password_hash
 from werkzeug.security import generate_password_hash
 from api.models.users import User 
+from api.models.stores import Store
 
 
 
@@ -94,7 +95,7 @@ class SuperuserSignupResource(Resource):
         if existing_user:
             return {'message': 'Username or email already exists'}, 409
 
-        hashed_password = bcrypt.generate_password_hash(data['password']).decode('utf-8')
+        hashed_password = generate_password_hash(data['password']).decode('utf-8')
 
         
         new_user = User(username=data['username'], password=hashed_password, email=data['email'], full_name=data['full_name'], role='merchant', store_id=data['store_id'])
@@ -125,7 +126,7 @@ class ClerkSignupResource(Resource):
         if existing_user:
             return {'message': 'Username or email already exists'}, 409
 
-        hashed_password = bcrypt.generate_password_hash(data['password']).decode('utf-8')
+        hashed_password = generate_password_hash(data['password']).decode('utf-8')
 
         new_user = User(username=data['username'], password=hashed_password, email=data['email'], full_name=data['full_name'], role='clerk', store_id=data['store_id'])
 

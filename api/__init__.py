@@ -35,7 +35,6 @@ from flask_bcrypt import Bcrypt
 # from .models.stores import Store
 
 
-from flask_bcrypt import Bcrypt
 
 
 
@@ -75,7 +74,7 @@ def create_app():
         }
     }
     
-    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers")
+    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers", authorizations=authorizations)
         
     api.add_namespace(email_namespace)
     api.add_namespace(signup_namespace) 
