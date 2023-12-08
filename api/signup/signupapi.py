@@ -1,5 +1,5 @@
-from flask import Flask, abort
-from flask_restx import Api, Resource, fields, Namespace, reqparse
+from flask import Flask, abort, request
+from flask_restx import Api, Resource, fields, Namespace, reqparse, marshal
 from flask_sqlalchemy import SQLAlchemy
 # from flask_bcrypt import generate_password_hash, check_password_hash
 from werkzeug.security import generate_password_hash
@@ -32,6 +32,13 @@ signup_model = signup_namespace.model('User', {
     'role': fields.String(required=True, description='Role', enum=ROLES),
     'store_id': fields.Integer(required=True, description='Store ID')
 })
+merchant_signup_model = signup_namespace.model('User', {
+    'username': fields.String(required=True, description='Username'),
+    'password': fields.String(required=True, description='Password'),
+    'email': fields.String(required=True, description='Email'),
+    'full_name': fields.String(required=True, description='Full Name'),
+    'role': fields.String(required=True, description='Role', enum=ROLES),
+})
 
 
 @signup_namespace.route('/')
@@ -57,6 +64,11 @@ class SignupResource(Resource):
             except ValueError:
                 return {'message': 'Invalid store_id. It must be a valid integer.'}, 400
             
+               # # Check if store_id exists in the database 
+        store = Store.query.get(data['store_id'])
+        if not store:
+            return {"error":"store not availa"}, 404
+            
         
         existing_user = User.query.filter((User.username == username) | (User.email == email)).first()
         if existing_user:
@@ -64,32 +76,36 @@ class SignupResource(Resource):
 
         if role not in ROLES:
             abort(400, 'Invalid role. Choose from: {}'.format(', '.join(ROLES)))
+        try:
 
-        hashed_password = generate_password_hash(plain_password).decode('utf-8')
 
-        hashed_password = generate_password_hash(plain_password)
-        new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role)
-        # new_user.save()
-        
-        return {'message': 'User registered successfully'}, 201
+            hashed_password = generate_password_hash(plain_password)
 
+            hashed_password = generate_password_hash(plain_password)
+            new_user = User(username=username, password=hashed_password, email=email, full_name=full_name, role=role ,store_id=store_id)
+            new_user.save()
+            
+            return marshal(new_user, signup_model), 201
+        except:
+            return{"error": 'Something went wrong while creating the user'}, 500
+            
 
 @signup_namespace.route('/superuser/')
 class SuperuserSignupResource(Resource):
     @api.doc(responses={201: 'Superuser registered successfully', 400: 'Invalid store_id', 409: 'Username or email already exists'})
-    @api.expect(signup_model, validate=True)
+    @api.expect(merchant_signup_model, validate=True)
     def post(self):
         """
         Register a new superuser (merchant).
         """
-        data = signup_parser.parse_args()
+        data = request.get_json()
 
         # Validate superuser-specific fields if needed
 
-        # Check if store_id exists in the database 
-        store = Store.query.get(data['store_id'])
-        if not store:
-            abort(400, 'Invalid store_id')
+        # # Check if store_id exists in the database 
+        # store = Store.query.get(data['store_id'])
+        # if not store:
+        #     return {"error":"store not availa"}
 
         existing_user = User.query.filter((User.username == data['username']) | (User.email == data['email'])).first()
         if existing_user:
@@ -97,12 +113,14 @@ class SuperuserSignupResource(Resource):
 
         hashed_password = generate_password_hash(data['password']).decode('utf-8')
 
+
+
         
-        new_user = User(username=data['username'], password=hashed_password, email=data['email'], full_name=data['full_name'], role='merchant', store_id=data['store_id'])
+        new_user = User(username=data['username'], password=hashed_password, email=data['email'], full_name=data['full_name'], role='merchant')
 
         new_user.save()
 
-        return {'message': 'Superuser registered successfully'}, 201
+        return marshal(new_user, merchant_signup_model), 201
     
 
 @signup_namespace.route('/clerk/')
@@ -120,7 +138,7 @@ class ClerkSignupResource(Resource):
         # Check if store_id exists in the database
         store = Store.query.get(data['store_id'])
         if not store:
-            abort(400, 'Invalid store_id')
+            return {"error": "no store avialble with that id"}, 404
 
         existing_user = User.query.filter((User.username == data['username']) | (User.email == data['email'])).first()
         if existing_user:
@@ -132,7 +150,7 @@ class ClerkSignupResource(Resource):
 
         new_user.save()
 
-        return {'message': 'Clerk registered successfully'}, 201
+        return marshal(new_user, signup_model), 201
 
 
 if __name__ == '__main__':
