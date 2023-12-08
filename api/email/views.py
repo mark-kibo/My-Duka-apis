@@ -41,6 +41,7 @@ class TokenizeEmail(Resource):
 
         
         current_user = get_current_user()
+        print(current_user)
         # msg = Message("email", sender=current_user.email, recipients=[user_email])
 
 
@@ -49,7 +50,7 @@ class TokenizeEmail(Resource):
             token = s.dumps(user_email, salt="email-confirm")
 
            
-            msg = Message("email", sender="chepmercy21@gmail.com", recipients=[user_email])
+            msg = Message("email", sender="kibochamark@gmail.com", recipients=[user_email])
 
             link = f'https://my-duka-front-kup405jo7-mark-kibo.vercel.app/signup/{token}'
             msg.body = "copy this link to your browser is {}".format(link)
