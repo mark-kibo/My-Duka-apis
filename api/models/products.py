@@ -14,7 +14,7 @@ class Products(db.Model):
     buying_price = db.Column(db.Integer())
     selling_price = db.Column(db.Integer())
     payment_status = db.Column(db.String(50))
-    image_url = db.Column(db.String(255))
+    image_url = db.Column(db.String(255), nullable=True)
     store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'),  nullable=False)
     supplier_id = db.Column(db.Integer, db.ForeignKey('suppliers.supplier_id'), nullable=False)
 
