@@ -37,7 +37,7 @@ merchant_signup_model = signup_namespace.model('User', {
     'password': fields.String(required=True, description='Password'),
     'email': fields.String(required=True, description='Email'),
     'full_name': fields.String(required=True, description='Full Name'),
-    'role': fields.String(required=True, description='Role', enum=ROLES),
+    'role': fields.String(required=True, description='Role', enum=ROLES)
 })
 
 
@@ -111,11 +111,9 @@ class SuperuserSignupResource(Resource):
         if existing_user:
             return {'message': 'Username or email already exists'}, 409
 
-        hashed_password = generate_password_hash(data['password']).decode('utf-8')
+        hashed_password = generate_password_hash(data['password'])
 
 
-
-        
         new_user = User(username=data['username'], password=hashed_password, email=data['email'], full_name=data['full_name'], role='merchant')
 
         new_user.save()
@@ -144,7 +142,7 @@ class ClerkSignupResource(Resource):
         if existing_user:
             return {'message': 'Username or email already exists'}, 409
 
-        hashed_password = generate_password_hash(data['password']).decode('utf-8')
+        hashed_password = generate_password_hash(data['password'])
 
         new_user = User(username=data['username'], password=hashed_password, email=data['email'], full_name=data['full_name'], role='clerk', store_id=data['store_id'])
 
