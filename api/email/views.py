@@ -33,7 +33,7 @@ def get_current_user():
 
 @email_namespace.route("/email")
 class TokenizeEmail(Resource):
-
+    @jwt_required()
     @email_namespace.expect(getmail_model)
     def post(self):
         data = request.get_json()
