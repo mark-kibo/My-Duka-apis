@@ -55,3 +55,30 @@ def test_get_product_invalid_id():
         assert response.status_code == 404
         assert response.json["message"] == "Product not found"
       
+def test_create_product():
+    """
+    Test that `create_product` creates a new product and returns it successfully.
+    """
+    with pytest.mock.patch.object(Products, "save"):
+        resource = ProductsResource()
+        response = resource.post(
+            json={
+                "product_name": "New Product",
+                "description": "This is a new product.",
+                "category": "Electronics",
+                "brand": "Apple",
+                "quantity": 10,
+                "buying_price": 100,
+                "selling_price": 120,
+                "payment_status": "paid",
+                "image_url": "https://example.com/product.jpg",
+                "store_id": 1,
+                "supplier_id": 2,
+            }
+        )
+
+        assert response.status_code == 201
+        assert response.json["product_name"] == "New Product"
+        assert response.json["description"] == "This is a new product."
+
+
