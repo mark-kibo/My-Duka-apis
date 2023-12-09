@@ -12,3 +12,22 @@ def test_get_all_stores():
 
     assert response.status_code == 200
     assert len(response.json) >= 0
+    
+def test_create_store():
+    """
+    Test that `StoreList.post` creates a new store and returns it successfully.
+    """
+
+    resource = StoreList()
+    new_store = {
+        "store_name": "Test Store",
+        "location": "Nairobi, Kenya",
+    }
+
+    response = resource.post(json=new_store)
+    data = response.json
+
+    assert response.status_code == 201
+    assert data["store_name"] == "Test Store"
+    assert data["location"] == "Nairobi, Kenya"
+
