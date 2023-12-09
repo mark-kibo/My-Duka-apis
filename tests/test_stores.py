@@ -63,3 +63,5 @@ def test_update_store():
     assert response.status_code == 200
     assert data["location"] == "Mombasa, Kenya"
 
+    Store.query.filter_by(store_id=1).update({"location": "Nairobi, Kenya"})
+    db.session.commit()
