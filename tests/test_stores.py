@@ -79,3 +79,17 @@ def test_delete_store():
 
     assert response.status_code == 204
     assert Store.query.filter_by(store_id=store_id).first() is None
+    
+def test_delete_store_unauthorized():
+    """
+    Test that `DeletStore.delete` returns an error message when attempted by a non-merchant user.
+    """
+
+    resource = DeletStore()
+    store_id = 1  # Assuming...
+    role_name = "user"
+
+    response = resource.delete(role_name, store_id)
+
+    assert response.status_code == 401
+    assert response.json["message"] == "You don't have permissions to perform this action!"
