@@ -33,3 +33,15 @@ def test_create_store():
 
     Store.query.filter_by(store_name="Test Store").delete()
     db.session.commit()
+    
+def test_get_store():
+    """
+    Test that `MutateStore.get` returns the correct store for a valid ID.
+    """
+
+    resource = MutateStore()
+    store_id = 1  # Assuming...
+    response = resource.get(store_id)
+
+    assert response.status_code == 200
+    assert response.json["store_id"] == store_id
