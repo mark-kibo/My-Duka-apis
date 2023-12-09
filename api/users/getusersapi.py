@@ -33,8 +33,12 @@ user_parser.add_argument('store_id', type=int, required=True, help='Store ID of 
 
 
 @get_users_namespace.route('/merchants')
+
 class GetMerchantsResource(Resource):
     # @get_users_namespace.marshal_with(user_model, as_list=True)
+    @get_users_namespace.doc(
+    description="get all merchants"
+)
     def get(self):
         merchants = User.query.filter_by(role='merchant').all()
         if not merchants:
@@ -42,6 +46,9 @@ class GetMerchantsResource(Resource):
         return marshal(merchants, user_model), HTTPStatus.OK
 
     @get_users_namespace.expect(user_parser)
+    @get_users_namespace.doc(
+    description="create a merchant"
+)
     def post(self):
         try:
             args = user_parser.parse_args()
@@ -60,8 +67,12 @@ class GetMerchantsResource(Resource):
     
 
     @get_users_namespace.route('/merchants/<int:merchant_id>')
+    
     class MerchantResource(Resource):
         @get_users_namespace.marshal_with(user_model)
+        @get_users_namespace.doc(
+    description="get merchant by id"
+)
         def get(self, merchant_id):
             merchant = User.query.get(merchant_id)
             if not merchant:
@@ -69,7 +80,12 @@ class GetMerchantsResource(Resource):
             return marshal(merchant, user_model)
 
         @get_users_namespace.expect(user_parser)
-    
+        
+        
+        
+        @get_users_namespace.doc(
+            description="update merchant resource"
+        )
         def put(self, merchant_id):
             try:
                 merchant = User.query.get(merchant_id)
@@ -87,6 +103,10 @@ class GetMerchantsResource(Resource):
                 return marshal(merchant, user_model), HTTPStatus.OK
             except:
                 return {"message": "cant update resource"}, HTTPStatus.BAD_REQUEST
+        
+        @get_users_namespace.doc(
+            description="delete merchant by id"
+        )
         def delete(self, merchant_id):
             merchant = User.query.get(merchant_id)
             if not merchant:

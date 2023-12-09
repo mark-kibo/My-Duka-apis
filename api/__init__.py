@@ -48,7 +48,16 @@ def create_app():
 
     migrate=Migrate(app, db)
     
-    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers")
+    authorizations={
+        "Bearer AUth":{
+            'type': 'apikey',
+            'in': 'header',
+            "name": 'Authorization',
+            'description': 'Add a JWT with ** Bearer &lt;JWT&gt; to authorize'
+        }
+    }
+    
+    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers", authorizations=authorizations, security="Bearer Auth")
         
   
     # api blueprints - used for documentation
