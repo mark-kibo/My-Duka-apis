@@ -1,7 +1,5 @@
 import pytest
-from products import ProductsResource, product_parser, product_model
-
-
+from .products import ProductsResource, product_parser, product_model
 
 
 @pytest.mark.parametrize("product_name, description, expected_response", [
@@ -26,6 +24,7 @@ def test_get_products(product_name, description, expected_response):
         assert response.json["products"][0]["product_name"] == product_name
         assert response.json["products"][0]["description"] == description
 
+
 def test_get_product_valid_id():
     """
     Test that `get_product` returns the correct product details for a valid ID.
@@ -42,3 +41,17 @@ def test_get_product_valid_id():
         assert response.json["product_id"] == 1
         assert response.json["product_name"] == "Test Product"
         assert response.json["description"] == "This is a test product."
+  
+def test_get_product_invalid_id():
+    """
+    Test that `get_product` returns a 404 error for an invalid ID.
+    """
+    with pytest.mock.patch.object(Products, "query"):
+        Products.query.filter_by.return_value.first.return_value = None
+
+        resource = ProductsResource()
+        response = resource.get(999)
+
+        assert response.status_code == 404
+        assert response.json["message"] == "Product not found"
+      
