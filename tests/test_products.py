@@ -41,7 +41,8 @@ def test_get_product_valid_id():
         assert response.json["product_id"] == 1
         assert response.json["product_name"] == "Test Product"
         assert response.json["description"] == "This is a test product."
-  
+
+
 def test_get_product_invalid_id():
     """
     Test that `get_product` returns a 404 error for an invalid ID.
@@ -54,7 +55,8 @@ def test_get_product_invalid_id():
 
         assert response.status_code == 404
         assert response.json["message"] == "Product not found"
-      
+
+
 def test_create_product():
     """
     Test that `create_product` creates a new product and returns it successfully.
@@ -65,13 +67,13 @@ def test_create_product():
             json={
                 "product_name": "New Product",
                 "description": "This is a new product.",
-                "category": "Electronics",
-                "brand": "Apple",
+                "category": "Foodstuff",
+                "brand": "Avena",
                 "quantity": 10,
-                "buying_price": 100,
-                "selling_price": 120,
+                "buying_price": 1200,
+                "selling_price": 1299,
                 "payment_status": "paid",
-                "image_url": "https://example.com/product.jpg",
+                "image_url": "https://naivas.online/103626-medium_default/avena-vegetable-oil-5l.jpg",
                 "store_id": 1,
                 "supplier_id": 2,
             }
@@ -80,5 +82,3 @@ def test_create_product():
         assert response.status_code == 201
         assert response.json["product_name"] == "New Product"
         assert response.json["description"] == "This is a new product."
-
-
