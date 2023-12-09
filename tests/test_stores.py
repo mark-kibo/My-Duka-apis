@@ -45,3 +45,21 @@ def test_get_store():
 
     assert response.status_code == 200
     assert response.json["store_id"] == store_id
+
+def test_update_store():
+    """
+    Test that `MutateStore.patch` updates the correct store for a valid ID.
+    """
+
+    resource = MutateStore()
+    store_id = 1  # Assuming...
+    updated_data = {
+        "location": "Mombasa, Kenya",
+    }
+
+    response = resource.patch(store_id, json=updated_data)
+    data = response.json
+
+    assert response.status_code == 200
+    assert data["location"] == "Mombasa, Kenya"
+
