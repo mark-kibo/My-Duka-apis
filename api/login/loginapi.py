@@ -1,11 +1,13 @@
 from flask_restx import Namespace, Resource, fields, reqparse
-from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity
-from werkzeug.security import check_password_hash, generate_password_hash
+from flask_jwt_extended import create_access_token
+from werkzeug.security import check_password_hash
 
+from datetime import timedelta
 
 from ..models.users import User
 
-login_namespace = Namespace('login', description='login endpoints')
+
+login_namespace = Namespace('login', description='Login endpoints')
 
 login_parser = reqparse.RequestParser()
 login_parser.add_argument('username', type=str, required=True, help='Username cannot be blank')

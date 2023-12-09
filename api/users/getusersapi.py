@@ -4,7 +4,7 @@ import werkzeug.security
 from ..utils import db
 from flask_restx import Api, fields, marshal, Resource, Namespace,reqparse
 from ..models.users import User 
-from flask_bcrypt import check_password_hash
+
 from http import HTTPStatus
 
 
@@ -30,6 +30,15 @@ user_parser.add_argument('password', type=str, required=True, help='Password of 
 user_parser.add_argument('email', type=str, required=True, help='Email of the clerk')
 user_parser.add_argument('full_name', type=str, required=True, help='Full name of the clerk')
 user_parser.add_argument('store_id', type=int, required=True, help='Store ID of the clerk')
+
+
+
+@get_users_namespace.route('/all-users')
+class GetAllUsersResource(Resource):
+    @get_users_namespace.marshal_with(user_model, as_list=True)
+    def get(self):
+        all_users = User.query.all()
+        return all_users
 
 
 @get_users_namespace.route('/merchants')

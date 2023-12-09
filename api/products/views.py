@@ -18,7 +18,6 @@ product_parser.add_argument('quantity', type=int)
 product_parser.add_argument('buying_price', type=int)
 product_parser.add_argument('selling_price', type=int)
 product_parser.add_argument('payment_status', type=str)
-product_parser.add_argument('image_url', type=str)
 product_parser.add_argument('store_id', type=int, required=True, help='Store ID is required')
 product_parser.add_argument('supplier_id', type=int, required=True, help='Supplier ID is required')
 
@@ -33,7 +32,6 @@ product_model = api.model('Product', {
     'buying_price': fields.Integer,
     'selling_price': fields.Integer,
     'payment_status': fields.String,
-    'image_url': fields.String,
     'store_id': fields.Integer,
     'supplier_id': fields.Integer,
 })
@@ -50,6 +48,7 @@ class ProductsResource(Resource):
         return products
 
     @api.doc('create_product')
+    @api.expect(product_model)
     @marshal_with(product_model)
     def post(self):
         """
@@ -65,7 +64,6 @@ class ProductsResource(Resource):
             buying_price=args['buying_price'],
             selling_price=args['selling_price'],
             payment_status=args['payment_status'],
-            image_url=args['image_url'],
             store_id=args['store_id'],
             supplier_id=args['supplier_id'],
         )
@@ -84,6 +82,7 @@ class ProductResource(Resource):
         return product
 
     @api.doc('update_product')
+    @api.expect(product_model)
     @marshal_with(product_model)
     def patch(self, product_id):
         """
@@ -100,7 +99,6 @@ class ProductResource(Resource):
         product.buying_price = args['buying_price']
         product.selling_price = args['selling_price']
         product.payment_status = args['payment_status']
-        product.image_url = args['image_url']
         product.store_id = args['store_id']
         product.supplier_id = args['supplier_id']
 

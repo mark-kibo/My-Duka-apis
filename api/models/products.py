@@ -1,11 +1,9 @@
 from ..utils import db
 from .association import store_product_association
-from .receipts import Receipts
-from .supplyrequests import SupplyRequests
-from .suppliers import Suppliers
 
 class Products(db.Model):
     __tablename__ = 'products'
+
 
     product_id = db.Column(db.Integer(), primary_key=True)
     product_name = db.Column(db.String(255), nullable=False)
@@ -16,8 +14,8 @@ class Products(db.Model):
     buying_price = db.Column(db.Integer())
     selling_price = db.Column(db.Integer())
     payment_status = db.Column(db.String(50))
-    image_url = db.Column(db.String(255))
-    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'), nullable=False)
+    image_url = db.Column(db.String(255), nullable=True)
+    store_id = db.Column(db.Integer, db.ForeignKey('stores.store_id'),  nullable=False)
     supplier_id = db.Column(db.Integer, db.ForeignKey('suppliers.supplier_id'), nullable=False)
 
     receipts = db.relationship('Receipts', backref='product', lazy=True)
@@ -28,9 +26,9 @@ class Products(db.Model):
 
     sales = db.relationship('Sales', backref='product', cascade='all, delete-orphan')
 
-    # Remove one of the following two lines based on your requirements
-    # stores = db.relationship('Store', back_populates='products_association', lazy=True)
+    # Relationship with the 'Store' table through the association table
     stores = db.relationship('Store', secondary=store_product_association, back_populates='products')
+
 
     def save(self):
         db.session.add(self)

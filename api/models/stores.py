@@ -1,5 +1,4 @@
 from ..utils import db
-from .products import Products
 from .association import store_product_association
 
 class Store(db.Model):
@@ -32,4 +31,3 @@ class Store(db.Model):
 
 
   
-
