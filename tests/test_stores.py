@@ -65,3 +65,17 @@ def test_update_store():
 
     Store.query.filter_by(store_id=1).update({"location": "Nairobi, Kenya"})
     db.session.commit()
+    
+def test_delete_store():
+    """
+    Test that `DeletStore.delete` deletes the correct store for a valid ID and associated products.
+    """
+
+    resource = DeletStore()
+    store_id = 2  # Assuming...
+    role_name = "merchant"
+
+    response = resource.delete(role_name, store_id)
+
+    assert response.status_code == 204
+    assert Store.query.filter_by(store_id=store_id).first() is None
