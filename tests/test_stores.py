@@ -31,3 +31,5 @@ def test_create_store():
     assert data["store_name"] == "Test Store"
     assert data["location"] == "Nairobi, Kenya"
 
+    Store.query.filter_by(store_name="Test Store").delete()
+    db.session.commit()
