@@ -16,4 +16,10 @@ def test_get_products(product_name, description, expected_response):
         Products(product_id=1, product_name=product_name, description=description),
         Products(product_id=2, product_name="Another Product", description="Another description"),
     ]
+    resource = ProductsResource()
+        response = resource.get(1)
 
+        assert response.status_code == 200
+        assert response.json["product_id"] == 1
+        assert response.json["product_name"] == "Test Product"
+        assert response.json["description"] == "This is a test product."
