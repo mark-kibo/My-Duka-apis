@@ -1,4 +1,5 @@
 import pytest
+from products import ProductsResource, product_parser, product_model
 
 
 
@@ -24,3 +25,20 @@ def test_get_products(product_name, description, expected_response):
         assert len(response.json["products"]) == 2
         assert response.json["products"][0]["product_name"] == product_name
         assert response.json["products"][0]["description"] == description
+
+def test_get_product_valid_id():
+    """
+    Test that `get_product` returns the correct product details for a valid ID.
+    """
+    with pytest.mock.patch.object(Products, "query"):
+        Products.query.filter_by.return_value.first.return_value = Products(
+            product_id=1, product_name="Test Product", description="This is a test product."
+        )
+
+        resource = ProductsResource()
+        response = resource.get(1)
+
+        assert response.status_code == 200
+        assert response.json["product_id"] == 1
+        assert response.json["product_name"] == "Test Product"
+        assert response.json["description"] == "This is a test product."
