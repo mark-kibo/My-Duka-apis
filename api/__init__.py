@@ -76,8 +76,7 @@ def create_app():
     
     api=Api(app,
             title="My duka apis",
-            description="Endpoints to access My duka stores, users, sales and suppliers",
-           doc="./")
+            description="Endpoints to access My duka stores, users, sales and suppliers")
         
     api.add_namespace(email_namespace)
     api.add_namespace(signup_namespace) 
