@@ -74,7 +74,7 @@ def create_app():
         }
     }
     
-    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers", authorizations=authorizations, security="Bearer Auth")
+    api=Api(app, title="My duka apis", description="Endpoints to access My duka stores, users, sales and suppliers", authorizations=authorizations, security="Bearer Auth",  _external=False)
         
     api.add_namespace(email_namespace)
     api.add_namespace(signup_namespace) 
