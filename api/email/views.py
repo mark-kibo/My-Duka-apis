@@ -38,12 +38,16 @@ class TokenizeEmail(Resource):
     def post(self):
         data = request.get_json()
         user_email = data.get("email")
+        
+        print("User Email:", user_email)
 
         
         current_user = get_current_user()
         print(current_user)
         # msg = Message("email", sender=current_user.email, recipients=[user_email])
 
+        if not user_email or not user_email.strip():
+            return {"error": "Invalid email address"}, HTTPStatus.BAD_REQUEST
 
         if current_user and current_user.role == 'merchant':
             
