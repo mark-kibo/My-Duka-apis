@@ -32,7 +32,7 @@ class User(db.Model):
         if self.role == 'merchant':
             # Delete the associated store and its users
             if self.stores:
-                store = self.stores[0]  # Assuming a user can be associated with only one store
+                store = self.stores  # Assuming a user can be associated with only one store
                 db.session.delete(store)
         else:
             # For users with roles other than 'merchant', set store_id to null
