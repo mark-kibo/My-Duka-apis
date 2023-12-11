@@ -28,6 +28,15 @@ class User(db.Model):
             db.session.commit()
 
     def delete(self):
+        # Check the role before deletion
+        if self.role == 'merchant':
+            # Delete the associated store and its users
+            if self.stores:
+                store = self.stores[0]  # Assuming a user can be associated with only one store
+                db.session.delete(store)
+        else:
+            # For users with roles other than 'merchant', set store_id to null
+            self.store_id = None
+
         db.session.delete(self)
         db.session.commit()
-    

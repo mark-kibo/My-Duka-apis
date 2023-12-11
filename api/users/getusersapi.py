@@ -238,7 +238,7 @@ class GetClerksResource(Resource):
         def delete(self, clerk_id):
             clerk = User.query.get(clerk_id)
             if clerk:
-                clerk.save()
+                clerk.delete()
                 return {'message': 'Clerk deleted successfully'}, 200
             else:
                 return {'message': 'Clerk not found'}, 404
