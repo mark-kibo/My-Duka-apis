@@ -36,7 +36,9 @@ class User(db.Model):
                 db.session.delete(store)
         else:
             # For users with roles other than 'merchant', set store_id to null
-            self.store_id = None
+            if self.stores:
+                store = self.stores[0]  # Assuming a user can be associated with only one store
+                store.user_id = None
 
         db.session.delete(self)
         db.session.commit()
