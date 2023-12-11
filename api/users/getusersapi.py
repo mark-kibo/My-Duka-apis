@@ -13,6 +13,7 @@ api = Api()
 
 get_users_namespace = Namespace('users', description='users endpoints')
 user_model = get_users_namespace.model('User', {
+    'id':fields.Integer(description="user id"),
     'username': fields.String(description='Username'),
     'password': fields.String(required=True, description='Password'),
     'email': fields.String(description='Email'),
