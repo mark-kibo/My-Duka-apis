@@ -2,3 +2,4 @@
 instance/
 _pycache_/
 .env
+.vercel

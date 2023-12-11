@@ -3,7 +3,7 @@ from flask_restx import Api, Resource, reqparse, Namespace, fields, marshal_with
 from ..utils import db
 from ..models.products import Products
 
-api = Api()
+
 
 # Namespace for Products
 products_namespace = Namespace('products', description='products endpoints')
@@ -22,7 +22,7 @@ product_parser.add_argument('store_id', type=int, required=True, help='Store ID 
 product_parser.add_argument('supplier_id', type=int, required=True, help='Supplier ID is required')
 
 # Model for serializing product data
-product_model = api.model('Product', {
+product_model = products_namespace.model('Product', {
     'product_id': fields.Integer,
     'product_name': fields.String,
     'description': fields.String,
@@ -38,7 +38,7 @@ product_model = api.model('Product', {
 
 @products_namespace.route('/')
 class ProductsResource(Resource):
-    @api.doc('list_products')
+    
     @marshal_with(product_model, envelope='products')
     def get(self):
         """
@@ -47,8 +47,7 @@ class ProductsResource(Resource):
         products = Products.query.all()
         return products
 
-    @api.doc('create_product')
-    @api.expect(product_model)
+    @products_namespace.expect(product_model)
     @marshal_with(product_model)
     def post(self):
         """
@@ -72,7 +71,7 @@ class ProductsResource(Resource):
 
 @products_namespace.route('/<int:product_id>')
 class ProductResource(Resource):
-    @api.doc('get_product')
+   
     @marshal_with(product_model)
     def get(self, product_id):
         """
@@ -81,8 +80,7 @@ class ProductResource(Resource):
         product = Products.query.filter_by(product_id=product_id).first()
         return product
 
-    @api.doc('update_product')
-    @api.expect(product_model)
+    @products_namespace.expect(product_model)
     @marshal_with(product_model)
     def patch(self, product_id):
         """
@@ -105,7 +103,8 @@ class ProductResource(Resource):
         product.save()
         return product
 
-    @api.doc('delete_product')
+  
+    
     def delete(self, product_id):
         """
         Delete a specific product.

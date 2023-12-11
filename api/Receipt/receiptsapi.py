@@ -7,7 +7,6 @@ from api.models.receipts import Receipts
 
 
 
-api = Api()
 
 
 receipts_namespace = Namespace('receipts', description='receipts endpoints')
@@ -20,7 +19,7 @@ receipt_parser.add_argument('quantity_received', type=int, required=True, help='
 receipt_parser.add_argument('payment_status', type=str, required=True, help='Payment status')
 
 
-receipt_model = api.model('Receipt', {
+receipt_model = receipts_namespace.model('Receipt', {
     'receipt_id': fields.Integer,
     'date_time': fields.String,
     'product_id': fields.Integer,
@@ -42,6 +41,7 @@ class ReceiptsResource(Resource):
         return receipts
 
     @marshal_with(receipt_model)
+    @receipts_namespace.expect(receipt_model)
     def post(self):
         args = receipt_parser.parse_args()
 

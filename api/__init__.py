@@ -22,7 +22,6 @@ from .signup.signupapi import signup_namespace
 
 from .users.getusersapi import get_users_namespace
 from .Receipt.receiptsapi import receipts_namespace
-from .products.views import products_namespace
 from .suppliers.app import suppliers_namespace
 from .login.loginapi import login_namespace
 from .stores.views import store_namespace
@@ -93,6 +92,7 @@ def create_app():
     api.add_namespace(sales_namespace) 
     api.add_namespace(suppliers_namespace)
     api.add_namespace(supply_requests_namespace)
+    api.add_namespace(receipts_namespace)
     
    
    
