@@ -37,7 +37,7 @@ class TokenizeEmail(Resource):
     @email_namespace.expect(getmail_model)
     def post(self):
         data = request.get_json()
-        user_email = data.get("email")
+        user_email = data["email"]
         
         print("User Email:", user_email)
 
