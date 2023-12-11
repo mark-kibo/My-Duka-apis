@@ -1,6 +1,8 @@
 import pytest
-from api.stores.views import StoreList, MutateStore, DeletStore
+from api.stores import StoreList, MutateStore, DeletStore
 from api.models.stores import Store
+from flask_sqlalchemy import SQLAlchemy
+from api.utils import db 
 
 def test_get_all_stores():
     """

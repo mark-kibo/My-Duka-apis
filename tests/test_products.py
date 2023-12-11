@@ -1,6 +1,6 @@
 import pytest
-from ..api.products.views import ProductsResource, product_parser, product_model
-from ..api.models.products import Products
+from api.products import ProductsResource, product_parser, product_model
+from api.models.products import Products
 
 # Test product creation
 def test_create_product():
