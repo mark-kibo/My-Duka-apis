@@ -7,7 +7,7 @@ class Store(db.Model):
     store_id = db.Column(db.Integer(), primary_key=True)
     store_name=db.Column(db.String(255), nullable=True)
     location = db.Column(db.String(255))
-    user_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'), nullable=True)
+    user_id = db.Column(db.Integer(),  db.ForeignKey('users.user_id', ondelete='SET NULL'), nullable=True)
     
     
   # Relationship with the 'Products' table through the association table
