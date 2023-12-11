@@ -9,4 +9,4 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 
-app.run()
+# app.run()
