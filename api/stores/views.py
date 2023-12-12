@@ -128,7 +128,7 @@ class DeletStore(Resource):
         
         
 
-@store_namespace.route("/stores/merchant_id")
+@store_namespace.route("/stores/<merchant_id>")
 class GetStoreBasedOnMerchant(Resource):
     """ get all stores related to a merchant"""
     
