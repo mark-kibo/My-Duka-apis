@@ -32,7 +32,7 @@ class LoginResource(Resource):
 
         if user and check_password_hash(user.password, password):
             # You can customize the token to include additional information
-            access_token = create_access_token(identity=user.user_id, additional_claims={'username': user.username, 'id': user.user_id, 'role': user.role})
+            access_token = create_access_token(identity=user.user_id, additional_claims={'username': user.username, 'id': user.user_id, 'role': user.role, 'stores': user.stores})
             return {'message': 'login successful', 'access_token': access_token}
 
         # Handle possible errors
