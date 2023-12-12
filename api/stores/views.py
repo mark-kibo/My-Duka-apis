@@ -102,7 +102,7 @@ class MutateStore(Resource):
 # this is only allowed by a mercharnt to delete a store
 
 
-@store_namespace.route("/<store_id>/<role_naem>/")
+@store_namespace.route("/<store_id>/<role_name>/")
 class DeletStore(Resource):
     def delete(self, role_name, store_id):
         """Delete a store and all of its associated products"""
@@ -124,3 +124,19 @@ class DeletStore(Resource):
         except Exception as e:
             print(f"Error: {e}")
             return {"error": "Bad request"}, HTTPStatus.BAD_REQUEST
+        
+        
+        
+
+@store_namespace.route("/stores/merchant_id")
+class GetStoreBasedOnMerchant(Resource):
+    """ get all stores related to a merchant"""
+    
+    def get(self, merchant_id):
+        
+        stores= Store.query.get(user_id=merchant_id).all()
+        
+        if not stores:
+            return {"message":"no stores registered under this user"}, 401
+        
+        return marshal(stores, store_model), 200
