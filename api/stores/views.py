@@ -134,7 +134,7 @@ class GetStoreBasedOnMerchant(Resource):
     
     def get(self, merchant_id):
         
-        stores= Store.query.get(user_id=merchant_id).all()
+        stores= Store.query.filter_by(user_id=merchant_id).all()
         
         if not stores:
             return {"message":"no stores registered under this user"}, 401
