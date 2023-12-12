@@ -22,10 +22,10 @@ class User(db.Model):
         db.session.commit()
         
         # Create a store for the user if not already associated with one and the role is 'merchant'
-        if self.role == 'merchant' and not self.stores:
-            store = Store(user=[self])
-            db.session.add(store)
-            db.session.commit()
+        # if self.role == 'merchant' and not self.stores:
+        #     store = Store(user=[self])
+        #     db.session.add(store)
+        #     db.session.commit()
 
     def delete(self):
         # Check the role before deletion
