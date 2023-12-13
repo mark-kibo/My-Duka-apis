@@ -21,7 +21,7 @@ supplier_parser.add_argument('supply_name', type=str, required=True, help='Name 
 supplier_parser.add_argument('supplier_contact', type=str, required=True, help='Contact information of the supplier')
 supplier_parser.add_argument('supplier_email', type=str, required=True, help='Email address of the supplier')
 supplier_parser.add_argument('supplier_address', type=str, required=True, help='Address of the supplier')
-supplier_parser.add_argument('product_id', type=int, required=True, help='Product supplied by the supplier')
+supplier_parser.add_argument('product_id', type=int, required=False, help='Product supplied by the supplier')
 supplier_parser.add_argument('store_id', type=int, required=True, help='Store associated with the supplier')
 
 @suppliers_namespace.route("/")
@@ -43,6 +43,7 @@ class SuppliersList(Resource):
     def post(self):
         try:
             data = supplier_parser.parse_args()
+        
 
             new_supplier = Suppliers(
                 supply_name=data['supply_name'],

@@ -23,7 +23,7 @@ product_parser.add_argument('supplier_id', type=int, required=True, help='Suppli
 
 # Model for serializing product data
 product_model = products_namespace.model('Product', {
-    'product_id': fields.Integer,
+    'id': fields.Integer,
     'product_name': fields.String,
     'description': fields.String,
     'category': fields.String,
@@ -77,7 +77,7 @@ class ProductResource(Resource):
         """
         Get details of a specific product.
         """
-        product = Products.query.filter_by(product_id=product_id).first()
+        product = Products.query.filter_by(id=product_id).first()
         return product
 
     @products_namespace.expect(product_model)
@@ -87,7 +87,7 @@ class ProductResource(Resource):
         Update details of a specific product.
         """
         args = product_parser.parse_args()
-        product = Products.query.filter_by(product_id=product_id).first()
+        product = Products.query.filter_by(id=product_id).first()
 
         product.product_name = args['product_name']
         product.description = args['description']
@@ -109,6 +109,6 @@ class ProductResource(Resource):
         """
         Delete a specific product.
         """
-        product = Products.query.filter_by(product_id=product_id).first()
+        product = Products.query.filter_by(id=product_id).first()
         product.delete()
         return {'message': 'Product deleted successfully'}
