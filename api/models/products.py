@@ -5,7 +5,7 @@ class Products(db.Model):
     __tablename__ = 'products'
 
 
-    product_id = db.Column(db.Integer(), primary_key=True)
+    id = db.Column(db.Integer(), primary_key=True)
     product_name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.String(255))
     category = db.Column(db.String(50))

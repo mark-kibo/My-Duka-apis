@@ -5,7 +5,7 @@ class SupplyRequests(db.Model):
 
     request_id = db.Column(db.Integer(), primary_key=True)
     users_id = db.Column(db.Integer(), db.ForeignKey('users.user_id'))
-    product_id = db.Column(db.Integer(), db.ForeignKey('products.product_id'))
+    product_id = db.Column(db.Integer(), db.ForeignKey('products.id'))
     quantity_requested = db.Column(db.Integer())
     reason_for_request = db.Column(db.String(255))
     received_items = db.Column(db.Integer())
